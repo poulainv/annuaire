@@ -1,0 +1,56 @@
+[
+    {
+        "model": "auth.user",
+        "fields": {
+            "username": "god",
+            "first_name": "Vincent",
+            "last_name": "Poulain",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2015-10-04T16:50:44.192Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$20000$J9PSfbNy2fVS$4IlbRc3z+UzEPWiRCnNcbEWiSQnd0+Nt3djajNVZL/I=",
+            "email": "vincent.poulain2@gmail.com",
+            "date_joined": "2015-10-04T16:50:28.354Z"
+        },
+        "pk": 1
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "username": "admin",
+            "first_name": "John",
+            "last_name": "Doe",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": true,
+            "last_login": "2015-10-05T16:50:44.192Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$20000$J9PSfbNy2fVS$4IlbRc3z+UzEPWiRCnNcbEWiSQnd0+Nt3djajNVZL/I=",
+            "email": "vincent.poulain2@gmail.com",
+            "date_joined": "2015-10-04T16:50:28.354Z"
+        },
+        "pk": 2
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "username": "member",
+            "first_name": "John",
+            "last_name": "Doe",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2015-10-05T16:50:44.192Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$20000$J9PSfbNy2fVS$4IlbRc3z+UzEPWiRCnNcbEWiSQnd0+Nt3djajNVZL/I=",
+            "email": "vincent.poulain2@gmail.com",
+            "date_joined": "2015-10-04T16:50:28.354Z"
+        },
+        "pk": 3
+    }
+]

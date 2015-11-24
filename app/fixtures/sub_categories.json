@@ -1,0 +1,34 @@
+[
+    {
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Location de véhicules",
+            "category": ["Mobilité"]
+        },
+        "pk": 1
+    },
+    {
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Covoiturage",
+            "category": ["Mobilité"]
+        },
+        "pk": 2
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Logement chez l'habitant",
+            "category": ["Logement"]
+        },
+        "pk": 3
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Recherche de colocation",
+            "category": ["Logement"]
+        },
+        "pk": 4
+    }
+]

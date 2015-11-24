@@ -1,0 +1,37 @@
+[
+    {
+        "model": "app.Category",
+        "fields": {
+            "name": "Mobilité"
+        },
+        "pk": 1
+    },
+    {
+        "model": "app.Category",
+        "fields": {
+            "name": "Logement"
+        },
+        "pk": 2
+    },
+    {
+        "model": "app.Category",
+        "fields": {
+            "name": "Alimentation"
+        },
+        "pk": 3
+    },
+    {
+        "model": "app.Category",
+        "fields": {
+            "name": "Connaissance"
+        },
+        "pk": 4
+    },
+    {
+        "model": "app.Category",
+        "fields": {
+            "name": "Service"
+        },
+        "pk": 5
+    }
+]

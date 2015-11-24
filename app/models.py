@@ -1,0 +1,61 @@
+from django.db import models
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+from django.core.exceptions import ValidationError
+
+
+class CategoryManager(models.Manager):
+
+    def get_by_natural_key(self, name):
+        return self.get(name=name)
+
+
+class Category(models.Model):
+
+    objects = CategoryManager()
+
+    name = models.CharField(max_length=10, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class SubCategory(models.Model):
+
+    name = models.CharField(max_length=20, unique=True)
+    category = models.ForeignKey(Category, related_name='sub_categories')
+
+    def __str__(self):
+        return '%s' % self.name
+
+
+class Project(models.Model):
+
+    title = models.CharField(max_length=50, unique=True)
+    slogan = models.CharField(max_length=250)
+    description = models.TextField(max_length=1500)
+    creation_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+    url = models.URLField(unique=True)
+    released_date = models.DateTimeField(null=True, blank=True)
+    draft = models.BooleanField(default=False)
+    youtube_url = models.URLField(blank=True)
+    vimeo_url = models.URLField(blank=True)
+    twitter_url = models.CharField(max_length=50, blank=True)
+    facebook_url = models.CharField(max_length=50, blank=True)
+    categories = models.ManyToManyField(Category, related_name='projects')
+    sub_categories = models.ManyToManyField(SubCategory,
+                                            related_name='projects')
+    contact_name = models.CharField(max_length=250, blank=True)
+    contact_telephone = models.CharField(max_length=20, blank=True)
+    contact_mail = models.EmailField(blank=True)
+
+    def __str__(self):
+        return self.title.capitalize()
+
+
+@receiver(pre_save, sender=Project)
+def validate_sub_category(sender, instance, **kwargs):
+    for sub_cat in instance.sub_categories.all():
+        if sub_cat.category not in instance.categories.all():
+            raise ValidationError('"%s" does not belong to any categories of this project' % sub_cat)
