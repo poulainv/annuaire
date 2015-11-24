@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
+
+Hello World :
+
+
+<div class="foo">
+{% for project in projects %}
+    <p>{{ project.title }}</p>
+    <p>{{ project.description }}</p>
+{% endfor %}
+
+</div>

@@ -1,10 +1,16 @@
-from rest_framework import viewsets
+from django.views.generic import ListView, DetailView
 
-from django.contrib.auth import User
-
-from app.serializers import UserSerializer
+from .models import Project
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class ProjectIndexView(ListView):
+    template_name = 'app/index.html'
+    context_object_name = 'projects'
+    model = Project
+
+
+class ProjectDetailView(DetailView):
+
+    model = Project
+    template_name = 'app/detail.html'
+    context_object_name = 'project'
