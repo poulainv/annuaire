@@ -1,0 +1,35 @@
+{% extends "app/base.html" %}
+
+{% block options_content %}
+    
+    {% if not request.GET.search %}
+        <div class="options-bar__sub-categories">
+            {% for sub_cat in sub_categories %}
+                <p> {{ sub_cat.name }} </p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="options-bar__search-info">
+            <p> Recherche pour </p>
+            <p> {{ request.GET.search }} ({{ projects.count }}) </p> 
+        </div>
+    {% endif %}
+    
+{% endblock options_content %}
+
+{% block content %}
+<div class="project-list">
+    {% for project in projects %}
+        <div class="project-view projet-view--list">
+            <img class="project-view__logo" src="foo.png">
+            <p class="project-view__title"> {{ project.title }} </p>
+            <p class="project-view__slogan"> {{ project.slogan }} </p>
+            <a class="project-view__url" href="{{ project.url }}"> {{ project.url }} </a>
+            <h3 class="project-view__category"> {{ project.category.name }} </h3>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+

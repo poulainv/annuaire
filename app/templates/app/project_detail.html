@@ -1,0 +1,26 @@
+
+
+{% extends "app/base.html" %}
+
+{% block content %}
+    
+    <div class="project-detail">
+        <img class="project-detail__logo" src="foo">
+        <h3 class="project-detail__title"></h3>
+        <a class="project-detail__url" href={{ project.url }}>
+            {{ project.url }}
+        </a>
+        <p class="project-detail__slogan"> {{ project.slogan }} </p>
+        <div class="project-detail__video"></div>
+        <div class="project-detail__description">
+            {{ project.description }}
+        </div>
+        <div class="project-detail__social">
+            <div class="share">
+                <p class="share__label"> Partager </p>
+                <img class="share__icon" src="foo"></img>
+            </div> 
+        </div>
+    </div>
+
+{% endblock content %}

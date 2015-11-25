@@ -1,7 +1,9 @@
 from django.db import models
 from django.db.models.signals import pre_save
+from s3direct.fields import S3DirectField
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 
 
 class CategoryManager(models.Manager):
@@ -13,6 +15,9 @@ class CategoryManager(models.Manager):
 class Category(models.Model):
 
     objects = CategoryManager()
+
+    class Meta:
+        verbose_name_plural = "categories"
 
     name = models.CharField(max_length=10, unique=True)
 
@@ -28,6 +33,9 @@ class SubCategory(models.Model):
     def __str__(self):
         return '%s' % self.name
 
+    class Meta:
+        verbose_name_plural = "sub_categories"
+
 
 class Project(models.Model):
 
@@ -37,6 +45,7 @@ class Project(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     url = models.URLField(unique=True)
+    image = S3DirectField(dest='imgs')
     released_date = models.DateTimeField(null=True, blank=True)
     draft = models.BooleanField(default=False)
     youtube_url = models.URLField(blank=True)
@@ -52,6 +61,14 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title.capitalize()
+
+    @classmethod
+    def search(cls, query):
+        q_title = Q(title__icontains=query)
+        q_slogan = Q(slogan__icontains=query)
+        q_category = Q(categories__name__icontains=query)
+
+        return Project.objects.filter(q_title | q_slogan | q_category).all()
 
 
 @receiver(pre_save, sender=Project)

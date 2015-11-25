@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
+    
+    {% load static %}
+    <script type="text/javascript" src='{% static 'jquery/jquery.js' %}'></script>
+</head>
+<body>
+
+
+    {% block navbar %}
+
+        <div class="navbar">
+            <div class="navbar__left-logo">
+                <img src="app/img/foo.png">
+            </div>
+            <div class="navbar__welcome-text">
+                <p> Bienvenue sur l'annuaire </p>
+                <p> de la consommation collaborative ! </p>
+            </div>
+            <div class="navbar__right-partner">
+                <img src="app/img/bar.png">
+            </div>
+        </div>
+
+    {% endblock navbar %}
+
+    {% block options %}
+        
+        <div class="options-bar">
+            <div class="options-bar__blog-link">
+                <img src="app/img/arrow.png" class="blog-link__arrow">
+                <p class="blog-link__label"> Visiter le blog </p>
+            </div>
+
+            {% block options_content %}
+                
+            {% endblock options_content %}
+
+            <div class="options-bar__search">
+                <img class="search__icon" src="app/img/icon.png">
+                <input class="search__input" placeholder="Rechecher un projet"></input>
+            </div>
+
+        </div>
+
+    {% endblock options %}
+    
+
+    {% block content %}
+        
+        This part should be redefined
+
+    {% endblock content %}
+ 
+    {% include "app/footer.html" %}
+
+
+</body>
+
+
+

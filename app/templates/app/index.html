@@ -1,14 +1,13 @@
-{% load staticfiles %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
-
-Hello World :
+{% extends "app/base.html" %}
 
 
-<div class="foo">
-{% for project in projects %}
-    <p>{{ project.title }}</p>
-    <p>{{ project.description }}</p>
-{% endfor %}
+{% block content %}
+    
+    <div class="category-list">
+        <div class="category-link">
+            <img class="category-link__picto" src="app/img/picto.png">
+            <a class="category-link__label" href=""></a>
+        </div>
+    </div>
 
-</div>
+{% endblock content %}

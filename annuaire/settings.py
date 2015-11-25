@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'app',
+    's3direct',
+    'djangobower'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,6 +94,10 @@ DATABASES = {
     }
 }
 
+S3DIRECT_DESTINATIONS = {
+    # Allow anybody to upload jpeg's and png's.
+    'imgs': ('uploads/imgs', lambda u: True, ['image/jpeg', 'image/jpg', 'image/png'],)
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -111,3 +117,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = ('djangobower.finders.BowerFinder', 'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder')
+
+
+BOWER_COMPONENTS_ROOT = BASE_DIR + '/components/'
+
+
+BOWER_INSTALLED_APPS = (
+    'jquery#1.9',
+    'underscore',
+    'gridism'
+)
