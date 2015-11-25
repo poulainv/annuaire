@@ -2,35 +2,49 @@
     {
         "model": "app.Category",
         "fields": {
-            "name": "Mobilité"
+            "name": "habitat"
         },
         "pk": 1
     },
     {
         "model": "app.Category",
         "fields": {
-            "name": "Logement"
+            "name": "biens"
         },
         "pk": 2
     },
     {
         "model": "app.Category",
         "fields": {
-            "name": "Alimentation"
+            "name": "savoir"
         },
         "pk": 3
     },
     {
         "model": "app.Category",
         "fields": {
-            "name": "Connaissance"
+            "name": "mobilite"
         },
         "pk": 4
     },
     {
         "model": "app.Category",
         "fields": {
-            "name": "Service"
+            "name": "alimentation"
+        },
+        "pk": 5
+    },
+        {
+        "model": "app.Category",
+        "fields": {
+            "name": "finance"
+        },
+        "pk": 6
+    },
+        {
+        "model": "app.Category",
+        "fields": {
+            "name": "services"
         },
         "pk": 5
     }
