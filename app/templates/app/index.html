@@ -4,10 +4,25 @@
 {% block content %}
     
     <div class="category-list">
-        <div class="category-link">
-            <img class="category-link__picto" src="app/img/picto.png">
-            <a class="category-link__label" href=""></a>
-        </div>
+        {% with 'habitat biens savoir mobilite alimentation finance services ' as categories %}
+            {% for cat in categories.split %}
+                <div class="category-list__item">
+                    <div class="category-link">
+                        <a href="projects?category={{cat}}">
+                            <img class="category-link__picto" 
+                                 src="static/app/img/picto__{{ cat }}.png"
+                                onmouseover="this.src='static/app/img/picto__{{ cat }}-hover.png'"
+                                onmouseout="this.src='static/app/img/picto__{{ cat }}.png'"></a>
+                            <a class="category-link__label" href="projects?category={{cat}}"> {{ cat }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endwith %}
+
     </div>
+
+<script>
+$()
+</script>
 
 {% endblock content %}

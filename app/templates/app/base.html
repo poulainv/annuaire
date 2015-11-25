@@ -8,10 +8,13 @@
     <![endif]-->
 
     {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/font.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
     
     {% load static %}
     <script type="text/javascript" src='{% static 'jquery/jquery.js' %}'></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'gridism/gridism.css' %}" />
+
 </head>
 <body>
 
@@ -20,14 +23,14 @@
 
         <div class="navbar">
             <div class="navbar__left-logo">
-                <img src="app/img/foo.png">
+                <img src="static/app/img/logo__conso.png">
             </div>
             <div class="navbar__welcome-text">
                 <p> Bienvenue sur l'annuaire </p>
                 <p> de la consommation collaborative ! </p>
             </div>
             <div class="navbar__right-partner">
-                <img src="app/img/bar.png">
+                <img src="static/app/img/logo__maif.png">
             </div>
         </div>
 
@@ -35,32 +38,40 @@
 
     {% block options %}
         
-        <div class="options-bar">
-            <div class="options-bar__blog-link">
-                <img src="app/img/arrow.png" class="blog-link__arrow">
-                <p class="blog-link__label"> Visiter le blog </p>
+        <div class="options-bar grid">
+            <div class="unit one-fifth">
+                <div class="options-bar__blog-link">
+                    <p class="blog-link__label"> <img src="static/app/img/picto__arrow.png" class="blog-link__arrow"> Visiter <span class="blog-link__label--bold"> le blog </span> </p>
+                </div>
             </div>
 
-            {% block options_content %}
-                
-            {% endblock options_content %}
-
-            <div class="options-bar__search">
-                <img class="search__icon" src="app/img/icon.png">
-                <input class="search__input" placeholder="Rechecher un projet"></input>
+            <div class="unit three-fifths">
+                {% block options_content %}
+                    
+                {% endblock options_content %}
             </div>
 
+            <div class="unit one-fifth">
+                <div class="options-bar__search">
+                    <img class="search__icon" src="static/app/img/picto__loupe.png">
+                    <input class="search__input" placeholder="Que recherchez-vous ?"></input>
+                </div>
+            </div>
         </div>
 
-    {% endblock options %}
-    
 
-    {% block content %}
+    {% endblock options %}
         
+    <div class="content">
+
+        {% block content %}
+
         This part should be redefined
 
-    {% endblock content %}
- 
+        {% endblock content %}
+    </div>
+
+
     {% include "app/footer.html" %}
 
 
