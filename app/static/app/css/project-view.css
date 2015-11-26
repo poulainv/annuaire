@@ -1,0 +1,38 @@
+.project-view {
+    display: table;
+    margin-top: 3%;
+    padding: 0px 15px 0px 15px !important;
+
+    background-color: white;
+    color: #233D6C;
+    border: 1px solid #233D6C;
+}
+
+.project-view:hover {
+    border-color: #EE5730;
+}
+
+.project-view__logo {
+    display: table-cell;
+    width: 26%;
+    vertical-align: middle;
+}
+
+.project-view__logo img {
+    height: 200px;
+}
+
+.project-view__info {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.project__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.project__slogan {
+    font-weight: bold;
+}

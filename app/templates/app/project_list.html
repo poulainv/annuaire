@@ -5,7 +5,10 @@
     {% if not request.GET.search %}
         <div class="options-bar__sub-categories">
             {% for sub_cat in sub_categories %}
-                <p> {{ sub_cat.name }} </p>
+                <p class="sub-categories"> 
+                    <img src="static/app/img/picto__moins.png">
+                    {{ sub_cat.name }} 
+                </p>
             {% endfor %}
         </div>
     {% else %}
@@ -20,12 +23,31 @@
 {% block content %}
 <div class="project-list">
     {% for project in projects %}
-        <div class="project-view projet-view--list">
-            <img class="project-view__logo" src="foo.png">
-            <p class="project-view__title"> {{ project.title }} </p>
-            <p class="project-view__slogan"> {{ project.slogan }} </p>
-            <a class="project-view__url" href="{{ project.url }}"> {{ project.url }} </a>
-            <h3 class="project-view__category"> {{ project.category.name }} </h3>
+        <div class="grid">
+            <div class="unit one-fifth"></div>
+            <div class="project-view unit three-fifths">
+                <div class="project-view__logo">
+                    <img src="{{ project.image }}">
+                </div>
+                <div class="project-view__info">
+                    <p class="project__title"> 
+                        {{ project.title }} 
+                    </p>
+                    <p class="project__slogan"> 
+                        {{ project.slogan }} 
+                    </p>
+                    <p class="project__description"> 
+                        {{ project.description | truncatechars:120 }} 
+                    </p>
+                    <a class="project-view__url" href="{{ project.url }}"> 
+                        {{ project.url }} 
+                    </a>
+                    <h3 class="project-view__category"> 
+                        {{ project.category.name }} 
+                    </h3>
+                </div>
+            </div>
+            <div class="unit one-fifth"></div>
         </div>
     {% endfor %}
 </div>

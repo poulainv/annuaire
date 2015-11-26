@@ -1,0 +1,99 @@
+
+/*------*/
+/*NAVBAR*/
+/*------*/
+
+
+.navbar {
+    top: 0px;
+    display: table;
+    background: #EE5730; /* Orange */
+    width: 100%;
+    height: 80px;
+    color: white;
+    border-color: #233D6C;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+}
+
+
+.navbar__left-logo {
+    width: 20%;
+    vertical-align: middle;
+    display: table-cell;
+    padding-left: 1%;
+}
+
+.navbar__left-logo img {
+    height: 40px;
+}
+
+.navbar__welcome-text {
+    width: 60%;
+    line-height: 3px;
+    text-align: center;
+    padding-top: 1%;
+    text-transform: uppercase;
+    display: table-cell;
+}
+
+.navbar__right-partner {
+    vertical-align: middle;
+    display: table-cell;
+
+}
+/*------*/
+/*OPTION*/
+/*------*/
+
+
+.options-bar {
+    text-transform: uppercase;
+}
+
+.options-bar__search {
+    padding-top: 20px;
+}
+
+.blog-link__label--bold {
+    font-weight: bold;
+}
+
+.options-bar__blog-link{
+    padding-left: 10%;
+}
+
+.blog-link__label {
+    vertical-align: middle;
+}
+.blog-link__label img{
+    height: 15px;
+    margin-right: 15%;
+}
+
+.search__icon {
+    height: 15px;
+    vertical-align: middle;
+}
+
+.search__input {
+    color: #BCC3D0;
+    border: none;
+    margin-left: 10%;
+    font-size: 0.9em;
+}
+
+
+/*------*/
+/*SUBCAT*/
+/*------*/
+
+.sub-categories {
+    display: inline-block;
+    padding-right: 3%;
+    vertical-align: middle;
+}
+
+.sub-categories img {
+    height: 15px;
+}
