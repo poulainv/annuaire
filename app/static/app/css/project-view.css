@@ -7,10 +7,10 @@
     color: #233D6C;
     border: 1px solid #233D6C;
 }
-
+/*
 .project-view:hover {
     border-color: #EE5730;
-}
+}*/
 
 .project-view__logo {
     display: table-cell;
