@@ -34,7 +34,7 @@
     width: 85%;
 }
 
-.project__title a {
+.project__title a:not(:hover) {
     color: #233D6C;
 }
 

@@ -1,26 +1,7 @@
 {% extends "app/base.html" %}
 
 {% block navbar_main %}
-    {% with 'habitat biens savoir mobilite alimentation finance services ' as categories %}
-        <div class="navbar__categories">
-                {% for cat in categories.split %}
-                    <div class="category-list__item category-list__item--little">
-                        <div class="category-link category-link--little">
-                            <a class="category-link__label category-link__label--little" href="projects?category={{cat}}"> {{ cat }}</a>
-                            <a href="projects?category={{cat}}">
-                                <img class="category-link__picto category-link__picto--little" 
-                                     src="static/app/img/picto__{{ cat }}.png"
-                                    onmouseover="this.src='static/app/img/picto__{{ cat }}-hover.png'"
-                                    onmouseout="this.src='static/app/img/picto__{{ cat }}.png'"></a>
-                    </div>
-                </div>
-                {% endfor %}
-        </div>
-        {# HACK #}
-        <div class="navbar__welcome-text">
-        </div>
-    {% endwith %}
-
+    {% include "app/navbar_main.html" %}
 {% endblock navbar_main %}
 
 {% block options_content %}
@@ -34,14 +15,14 @@
                                 <a href="{% url 'projects' %}?category={{request.GET.category}}">
                                 <img 
                                     src="{% static 'app/img/picto__moins.png' %}">
-                                                {{ sub_cat.name }}
+                                    {{ sub_cat.name }}
                                 </a>
                             </p>
                         {% else %}
                             <p class="sub-category sub-category--deactivate">
                                 <a href="{% url 'projects' %}?category={{request.GET.category}}&sub_cat={{sub_cat.pk}}">
                                 <img src="{% static 'app/img/picto__plus.png' %}">
-                                                {{ sub_cat.name }}
+                                    {{ sub_cat.name }}
                                 </a>
                             </p>
                         {% endif %}
