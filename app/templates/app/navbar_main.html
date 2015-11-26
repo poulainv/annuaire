@@ -1,0 +1,26 @@
+{% load static %}
+{% with 'habitat biens savoir mobilite alimentation finance services ' as categories %}
+
+    <div class="navbar__categories">
+        {% for cat in categories.split %}
+            {% with 'app/img/picto__'|add:cat|add:'.png' as picto %}
+            {% with 'app/img/picto__'|add:cat|add:'-hover.png' as picto_hover %}
+                 
+                <div class="category-list__item category-list__item--little">
+                    <div class="category-link category-link--little">
+                        <a class="category-link__label category-link__label--little" href="projects?category={{cat}}"> {{ cat }}</a>
+                        <a href="projects?category={{cat}}">
+                        <img class="category-link__picto category-link__picto--little" 
+                             src="{% static picto %}"
+                            onmouseover="this.src='{% static picto_hover %}'"
+                            onmouseout="this.src='{% static picto %}'"></a>
+                    </div>
+                </div>
+            {% endwith %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+        {# HACK #}
+    <div class="navbar__welcome-text">
+    </div>
+{% endwith %}
