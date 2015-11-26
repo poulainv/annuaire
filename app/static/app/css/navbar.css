@@ -110,6 +110,10 @@
     text-decoration: none;
 }*/
 
+.category-link {
+    text-align: center;
+}
+
 .sub-category img {
     height: 15px;
 }
