@@ -46,7 +46,9 @@
             <div class="unit one-fifth"></div>
             <div class="project-view unit three-fifths">
                 <div class="project-view__logo">
-                    <img src="{{ project.image }}">
+                    <a href="{% url 'project' project.pk %}">
+                        <img src="{{ project.image }}">
+                    </a>
                 </div>
                 <div class="project-view__info">
                     <div class="project-view__header">
