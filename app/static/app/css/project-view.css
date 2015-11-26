@@ -34,6 +34,10 @@
     width: 85%;
 }
 
+.project__title a {
+    color: #233D6C;
+}
+
 .project__slogan {
     font-weight: bold;
 }
