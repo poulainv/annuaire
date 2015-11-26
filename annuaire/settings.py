@@ -110,6 +110,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = BASE_DIR + STATIC_URL
+
 STATICFILES_FINDERS = ('djangobower.finders.BowerFinder', 'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder')
 
 
