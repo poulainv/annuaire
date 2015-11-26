@@ -29,10 +29,16 @@
                     <img src="{% static 'app/img/logo__conso.png' %}">
                 </a>
             </div>
+
+            {% block navbar_main %}
+
             <div class="navbar__welcome-text">
                 <p> Bienvenue sur l'annuaire </p>
                 <p> de la consommation collaborative ! </p>
             </div>
+
+            {% endblock %}
+            
             <div class="navbar__right-partner">
                 <img src="{% static 'app/img/logo__maif.png' %}">
             </div>

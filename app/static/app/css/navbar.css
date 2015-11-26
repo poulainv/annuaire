@@ -84,6 +84,12 @@
     font-size: 0.9em;
 }
 
+/*NAVBARCAT*/
+
+.navbar__categories li {
+    display: inline;
+}
+
 
 /*------*/
 /*SUBCAT*/
@@ -95,6 +101,9 @@
     vertical-align: middle;
 }
 
+.options-bar__sub-categories {
+    margin-top: 2%;
+}
 /*
 .sub-category a {
     color: #233D6C;

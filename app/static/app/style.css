@@ -51,7 +51,8 @@ h1, h2, h3, h4 {
     padding: 0px 20px 0px 20px;
 }
 
-.category-list__item:hover a{
+
+.category-list__item:hover a {
     color: #EE5730;
 }
 
@@ -62,4 +63,30 @@ h1, h2, h3, h4 {
     padding-top: 15px;
     text-decoration: none;
     color: #233D6C;
+}
+
+
+.navbar__categories {
+    text-transform: uppercase;
+    position: absolute;
+    top: 15px;
+    left: 30%;
+}
+
+.category-list__item--little {
+    padding: 0px 10px 0px 10px;
+}
+
+.category-link__label--little {
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.category-list__item--little:hover a{
+    color: black !important;
+}
+
+.category-link__picto--little {
+    height: 60px;
 }
