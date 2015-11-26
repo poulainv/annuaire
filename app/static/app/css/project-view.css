@@ -15,7 +15,6 @@
 .project-view__logo {
     display: table-cell;
     width: 26%;
-    vertical-align: middle;
 }
 
 .project-view__logo img {
