@@ -23,11 +23,10 @@
 
 
     {% block navbar %}
-
         <div class="navbar">
             <div class="navbar__left-logo">
                 <a href=" {% url 'home' %}">
-                    <img src="static/app/img/logo__conso.png">
+                    <img src="{% static 'app/img/logo__conso.png' %}">
                 </a>
             </div>
             <div class="navbar__welcome-text">
@@ -35,7 +34,7 @@
                 <p> de la consommation collaborative ! </p>
             </div>
             <div class="navbar__right-partner">
-                <img src="static/app/img/logo__maif.png">
+                <img src="{% static 'app/img/logo__maif.png' %}">
             </div>
         </div>
 
@@ -48,7 +47,7 @@
                 <div class="options-bar__blog-link">
                     <p class="blog-link__label">
                         <a href="http://consocollaborative.com" target="_blank">
-                            <img src="static/app/img/picto__arrow.png" class="blog-link__arrow"> Visiter <span class="blog-link__label--bold"> le blog </span> 
+                            <img src="{% static 'app/img/picto__arrow.png' %}" class="blog-link__arrow"> Visiter <span class="blog-link__label--bold"> le blog </span> 
                         </a>
                     </p>
                 </div>
@@ -62,7 +61,7 @@
 
             <div class="unit one-fifth">
                 <div class="options-bar__search">
-                    <img class="search__icon" src="static/app/img/picto__loupe.png">
+                    <img class="search__icon" src="{% static 'app/img/picto__loupe.png' %}">
                     <input class="search__input" placeholder="Que recherchez-vous ?"></input>
                 </div>
             </div>
