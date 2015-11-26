@@ -38,6 +38,19 @@
     font-weight: bold;
 }
 
+.project__video {
+    padding: 10px 0px 10px 0px;
+}
+
+.project-exit {
+    height : 15px;
+}
+
+.project-detail__cross {
+    margin-left: 10%;
+    margin-top: 15%;
+}
+
 .project-view__header > * {
     display: inline-block;
 }

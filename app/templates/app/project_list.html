@@ -1,6 +1,7 @@
 {% extends "app/base.html" %}
 
 {% block options_content %}
+    {% load static %}
     {% with request.GET.sub_cat|add:"0" as selected_sub_cat %}
         {% if not request.GET.search %}
             <div class="options-bar__sub-categories">
@@ -20,7 +21,7 @@
                                                 {{ sub_cat.name }}
                                 </a>
                             </p>
-                            {% endif %}
+                        {% endif %}
                 
                 {% endfor %}
             </div>
@@ -45,9 +46,10 @@
                 </div>
                 <div class="project-view__info">
                     <div class="project-view__header">
-                        <h2 class="project__title"> 
-                            {{ project.title }} 
-                        </h2>
+                        
+                            <h2 class="project__title"> 
+                                <a href="{% url 'project' project.pk %}">{{ project.title }} </a>
+                            </h2>
                         <h4 class="project-view__category"> 
                             {# category-link__label for class ? #}
                             {{ category.name }} 
@@ -59,7 +61,7 @@
                     <p class="project__description"> 
                         {{ project.description | truncatechars:120 }} 
                     </p>
-                    <a class="project-view__url" href="{{ project.url }}"> 
+                    <a class="project-url" href="{{ project.url }}"> 
                         {{ project.url }} 
                     </a>
 

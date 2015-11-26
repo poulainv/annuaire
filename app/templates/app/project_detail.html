@@ -1,26 +1,54 @@
 
-
 {% extends "app/base.html" %}
 
 {% block content %}
     
-    <div class="project-detail">
-        <img class="project-detail__logo" src="foo">
-        <h3 class="project-detail__title"></h3>
-        <a class="project-detail__url" href={{ project.url }}>
-            {{ project.url }}
-        </a>
-        <p class="project-detail__slogan"> {{ project.slogan }} </p>
-        <div class="project-detail__video"></div>
-        <div class="project-detail__description">
-            {{ project.description }}
-        </div>
-        <div class="project-detail__social">
-            <div class="share">
-                <p class="share__label"> Partager </p>
-                <img class="share__icon" src="foo"></img>
-            </div> 
-        </div>
-    </div>
+    {% load static %}
 
+    <div class="grid">
+        <div class="unit one-fifth"></div>
+        <div class="project-view unit three-fifths">
+            <div class="project-view__logo">
+                <img src="{{ project.image }}">
+            </div>
+            <div class="project-view__info">
+                <div class="project-view__header">
+                    <h2 class="project__title"> 
+                        {{ project.title }} 
+                    </h2>
+                    {% for cat in project.categories.all %}
+                        <h4 class="project-view__category"> 
+                            {# category-link__label for class ? #}
+                                {{ cat }}
+                        </h4>
+                    {% endfor %}
+                </div>
+                <a class="project-url" href="{{ project.url }}"> 
+                    {{ project.url }} 
+                </a>
+                <p class="project__slogan"> {{ project.slogan }} </p>
+                {% if not project.youtube_url %}
+                    <div class="project__video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TmJBzgfppGk" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                {% endif %}
+                <div class="project-detail__description">
+                    {{ project.description }}
+                </div>
+                <div class="project-detail__social">
+                    <div class="share">
+                        <p class="share__label"> Partager </p>
+                        <img class="share__icon" src="foo"></img>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="unit one-fifth">
+            <div class="project-detail__cross">
+                <a href="{% url 'home' %}">
+                    <img class="project-exit" src="{% static 'app/img/picto__cross.png' %}">
+                </a>
+            </div>
+        </div>
+</div>
 {% endblock content %}
