@@ -3,7 +3,7 @@
         "model": "app.SubCategory",
         "fields": {
             "name": "Location de véhicules",
-            "category": ["Mobilité"]
+            "category": ["mobilite"]
         },
         "pk": 1
     },
@@ -11,7 +11,7 @@
         "model": "app.SubCategory",
         "fields": {
             "name": "Covoiturage",
-            "category": ["Mobilité"]
+            "category": ["mobilite"]
         },
         "pk": 2
     },
@@ -19,7 +19,7 @@
         "model": "app.SubCategory",
         "fields": {
             "name": "Logement chez l'habitant",
-            "category": ["Logement"]
+            "category": ["habitat"]
         },
         "pk": 3
     },
@@ -27,7 +27,7 @@
         "model": "app.SubCategory",
         "fields": {
             "name": "Recherche de colocation",
-            "category": ["Logement"]
+            "category": ["habitat"]
         },
         "pk": 4
     }

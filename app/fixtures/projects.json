@@ -12,7 +12,7 @@
             "twitter_url": "https://twitter.com/airbnb",
             "facebook_url": "https://www.facebook.com/AirbnbFrance",
             "categories": [
-                ["Logement"]
+                ["habitat"]
             ],
             "sub_categories": [3]
         },
@@ -28,13 +28,13 @@
             "update_date": "2015-10-05T16:5:28.354Z",
             "url": "http://www.drivy.com",
             "categories": [
-                ["Mobilité"]
+                ["mobilite"]
             ],
             "sub_categories": [1]
         },
         "pk": 2
     },
-    {
+     {
         "model": "app.Project",
         "fields": {
             "title": "Nightswapping",
@@ -44,7 +44,7 @@
             "update_date": "2015-10-05T16:5:28.354Z",
             "url": "http://www.nightswapping.com",
             "categories": [
-                ["Logement"]
+                ["habitat"]
             ],
             "sub_categories": [3]
         },
@@ -60,7 +60,7 @@
             "update_date": "2015-10-05T16:5:28.354Z",
             "url": "https://www.couchsurfing.org/",
             "categories": [
-                ["Logement"], ["Service"]
+                ["habitat"], ["services"]
             ],
             "sub_categories": [3]
         },
@@ -76,7 +76,7 @@
             "update_date": "2015-10-05T16:5:28.354Z",
             "url": "http://www.smoovup.com/",
             "categories": [
-                ["Logement"]
+                ["habitat"]
             ],
             "sub_categories": [4]
         },
@@ -92,7 +92,7 @@
             "update_date": "2015-10-05T16:5:28.354Z",
             "url": "http://www.blablacar.fr",
             "categories": [
-                ["Mobilité"]
+                ["mobilite"]
             ],
             "sub_categories": [2]
         },
@@ -108,7 +108,7 @@
             "update_date": "2015-10-05T16:5:28.354Z",
             "url": "http://www.laruchequiditoui.fr/",
             "categories": [
-                ["Alimentation"]
+                ["alimentation"]
             ]
         },
         "pk": 7
