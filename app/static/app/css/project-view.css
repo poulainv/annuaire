@@ -31,8 +31,17 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
+    width: 85%;
 }
 
 .project__slogan {
     font-weight: bold;
+}
+
+.project-view__header > * {
+    display: inline-block;
+}
+
+.project-view__category {
+    font-weight: normal;    
 }

@@ -6,10 +6,22 @@ html, body {
     font-family: 'CooperHewitt';
 }
 
-input, button {
+input, button, a {
     font-family: 'CooperHewitt';
 }
 
+a {
+    text-decoration: none;  
+}
+
+a:hover {
+    color: #EE5730;
+}
+
+h1, h2, h3, h4 {
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 /*-------*/
 /*CONTENT*/

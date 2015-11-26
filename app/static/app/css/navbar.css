@@ -63,9 +63,10 @@
     padding-left: 10%;
 }
 
-.blog-link__label {
+/*.blog-link__label a {
     vertical-align: middle;
-}
+}*/
+
 .blog-link__label img{
     height: 15px;
     margin-right: 15%;
@@ -88,12 +89,22 @@
 /*SUBCAT*/
 /*------*/
 
-.sub-categories {
+.sub-category {
     display: inline-block;
     padding-right: 3%;
     vertical-align: middle;
 }
 
-.sub-categories img {
+/*
+.sub-category a {
+    color: #233D6C;
+    text-decoration: none;
+}*/
+
+.sub-category img {
     height: 15px;
+}
+
+.sub-category--deactivate a:not(:hover) {
+    color: #919EB3;
 }
