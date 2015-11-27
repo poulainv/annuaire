@@ -26,6 +26,11 @@
     display: table-cell;
 }
 
+.project__url:not(:hover) {
+    color: #233D6C;
+    width: 80%;
+}
+
 .project__title {
     text-transform: uppercase;
     font-weight: bold;
@@ -45,7 +50,12 @@
     padding: 10px 0px 10px 0px;
 }
 
-.project-exit {
+.project__share img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.project-detail__exit {
     height : 15px;
 }
 
@@ -54,8 +64,24 @@
     margin-top: 15%;
 }
 
+.project-detail__footer {
+    padding-top: 10px;
+}
+
 .project-view__header > * {
     display: inline-block;
+}
+
+.project-view__footer > * {
+    display: inline-block;
+}
+
+.project-detail__footer > * {
+    display: inline-block;
+}
+
+.project__blog-url {
+    width: 80%;
 }
 
 .project-view__category {

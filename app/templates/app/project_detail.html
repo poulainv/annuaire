@@ -26,7 +26,7 @@
                         </h4>
                     {% endfor %}
                 </div>
-                <a class="project-url" href="{{ project.url }}"> 
+                <a class="project__url" href="{{ project.url }}"> 
                     {{ project.url }} 
                 </a>
                 <p class="project__slogan"> {{ project.slogan }} </p>
@@ -38,18 +38,20 @@
                 <div class="project-detail__description">
                     {{ project.description }}
                 </div>
-                <div class="project-detail__social">
-                    <div class="share">
-                        <p class="share__label"> Partager </p>
-                        <img class="share__icon" src="foo"></img>
-                    </div> 
+                <div class="project-detail__footer">
+                    <div class="project__blog-url">
+                        <a href="">Article de blog</a>
+                    </div>
+                    <div class="project__share">
+                            <p>Partager  <img src="{% static 'app/img/picto__social.png' %}"></p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="unit one-fifth">
             <div class="project-detail__cross">
                 <a href="">
-                    <img onClick="javascript:history.go(-1);" class="project-exit" src="{% static 'app/img/picto__cross.png' %}">
+                    <img onClick="javascript:history.go(-1);" class="project-detail__exit" src="{% static 'app/img/picto__cross.png' %}">
                 </a>
             </div>
         </div>

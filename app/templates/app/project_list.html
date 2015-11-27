@@ -26,7 +26,6 @@
                                 </a>
                             </p>
                         {% endif %}
-                
                 {% endfor %}
             </div>
         {% else %}
@@ -66,14 +65,21 @@
                     <p class="project__description"> 
                         {{ project.description | truncatechars:120 }} 
                     </p>
-                    <a class="project-url" href="{{ project.url }}"> 
+                    <div class="project-view__footer">
+                        <a class="project__url" href="{{ project.url }}"> 
                         {{ project.url }} 
-                    </a>
-
+                        </a>
+                        <div class="project__share">
+                            <p>Partager  <img src="{% static 'app/img/picto__social.png' %}"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="unit one-fifth"></div>
         </div>
+
+    {% empty %}
+        <h3>Pas encore de projets, ça ne va pas tarder !</h3>
     {% endfor %}
 </div>
 
