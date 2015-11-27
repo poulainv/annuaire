@@ -39,6 +39,15 @@
 {% endblock options_content %}
 
 {% block content %}
+
+<div class="grid">
+    <div class="unit one-fifth"></div>
+    <div class="unit three-fifths">
+        <p> {{ projects.count }} projets trouvés :</p>
+    </div>
+    <div class="unit one-fifth"></div>
+</div>
+
 <div class="project-list">
     {% for project in projects %}
         <div class="grid">
