@@ -2,6 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
+
+    {% block meta %}
+        
+    {% endblock meta %}
+    
     <title></title>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -13,6 +18,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/navbar.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/footer.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/project-view.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/project-detail.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/sticky-bar.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/atom/project.css' %}" />
     
     {% load static %}
     <script type="text/javascript" src="{% static 'jquery/jquery.js' %}"></script>
@@ -20,7 +28,30 @@
 
 </head>
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '935935106494041',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    <div class="sticky-bar">
+        <p class="blog-link__label">
+                        <a href="http://consocollaborative.com" target="_blank">
+                            <img src="{% static 'app/img/picto__arrow.png' %}" class="blog-link__arrow"> Visiter <span class="blog-link__label--bold"> le blog </span> 
+                        </a>
+        </p>
+    </div>
 
     {% block navbar %}
         <div class="navbar">
@@ -52,13 +83,6 @@
         
         <div class="options-bar grid">
             <div class="unit one-fifth">
-                <div class="options-bar__blog-link">
-                    <p class="blog-link__label">
-                        <a href="http://consocollaborative.com" target="_blank">
-                            <img src="{% static 'app/img/picto__arrow.png' %}" class="blog-link__arrow"> Visiter <span class="blog-link__label--bold"> le blog </span> 
-                        </a>
-                    </p>
-                </div>
             </div>
 
             <div class="unit three-fifths">
@@ -94,6 +118,6 @@
 
 
 </body>
-
+</html>
 
 

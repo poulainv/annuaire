@@ -1,15 +1,15 @@
 .project-view {
     display: table;
-    margin-bottom: 3%;
+    margin-top: 3%;
     padding: 0px 15px 0px 15px !important;
     background-color: white;
     color: #233D6C;
     border: 1px solid #233D6C;
 }
-/*
+
 .project-view:hover {
     border-color: #EE5730;
-}*/
+}
 
 .project-view__logo {
     display: table-cell;
@@ -23,48 +23,6 @@
 .project-view__info {
     vertical-align: middle;
     display: table-cell;
-}
-
-.project__url:not(:hover) {
-    color: #233D6C;
-    width: 80%;
-}
-
-.project__title {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-    width: 85%;
-}
-
-.project__title a:not(:hover) {
-    color: #233D6C;
-}
-
-.project__slogan {
-    font-weight: bold;
-}
-
-.project__video {
-    padding: 10px 0px 10px 0px;
-}
-
-.project__share img {
-    height: 20px;
-    vertical-align: middle;
-}
-
-.project-detail__exit {
-    height : 15px;
-}
-
-.project-detail__cross {
-    margin-left: 10%;
-    margin-top: 15%;
-}
-
-.project-detail__footer {
-    padding-top: 10px;
 }
 
 .project-view__header > * {

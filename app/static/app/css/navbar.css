@@ -48,7 +48,7 @@
 
 
 .options-bar {
-    text-transform: uppercase;
+    min-height: 90px;
 }
 
 .options-bar__search {
@@ -70,6 +70,7 @@
 .blog-link__label img{
     height: 15px;
     margin-right: 15%;
+    text-transform: uppercase;
 }
 
 .search__icon {
@@ -84,13 +85,6 @@
     font-size: 0.9em;
 }
 
-/*NAVBARCAT*/
-
-.navbar__categories li {
-    display: inline;
-}
-
-
 /*------*/
 /*SUBCAT*/
 /*------*/
@@ -99,6 +93,7 @@
     display: inline-block;
     padding-right: 3%;
     vertical-align: middle;
+    text-transform: uppercase;
 }
 
 .options-bar__sub-categories {

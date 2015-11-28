@@ -27,6 +27,9 @@
                             </p>
                         {% endif %}
                 {% endfor %}
+        
+                <p> {{ projects.count }} projets trouvés :</p>
+
             </div>
         {% else %}
             <div class="options-bar__search-info">
@@ -39,14 +42,6 @@
 {% endblock options_content %}
 
 {% block content %}
-
-<div class="grid">
-    <div class="unit one-fifth"></div>
-    <div class="unit three-fifths">
-        <p> {{ projects.count }} projets trouvés :</p>
-    </div>
-    <div class="unit one-fifth"></div>
-</div>
 
 <div class="project-list">
     {% for project in projects %}
@@ -63,7 +58,7 @@
                             <h2 class="project__title"> 
                                 <a href="{% url 'project' project.pk %}">{{ project.title }} </a>
                             </h2>
-                        <h4 class="project-view__category"> 
+                        <h4 class="project-sub_category"> 
                             {# category-link__label for class ? #}
                             {{ category.name }} 
                         </h4>
@@ -79,7 +74,7 @@
                         {{ project.url }} 
                         </a>
                         <div class="project__share">
-                            <p>Partager  <img src="{% static 'app/img/picto__social.png' %}"></p>
+                            <div class="fb-share-button" data-href="{% url 'project' project.pk %}" data-layout="button_count"></div>
                         </div>
                     </div>
                 </div>
