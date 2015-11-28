@@ -26,7 +26,7 @@ SECRET_KEY = 'yi0cvdox+5vre4ny&k8up_*7sj$ylnqe-uqcu$b85w&%dk%9e6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com']
 
 
 # Application definition
