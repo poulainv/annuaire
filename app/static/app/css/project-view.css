@@ -33,14 +33,6 @@
     display: inline-block;
 }
 
-.project-detail__footer > * {
-    display: inline-block;
-}
-
-.project__blog-url {
-    width: 80%;
-}
-
-.project-view__category {
+.project-sub_category {
     font-weight: normal;    
 }

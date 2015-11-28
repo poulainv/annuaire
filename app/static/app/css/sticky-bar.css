@@ -1,0 +1,10 @@
+.sticky-bar {
+    position: fixed;
+    left: 0px;
+    top: 40%;
+    width: 40px;
+    background-color: white;
+    z-index: 3;
+    border: 1px solid #C8C8C8;
+
+}

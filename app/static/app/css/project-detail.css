@@ -1,0 +1,60 @@
+.project-detail {
+    padding-bottom: 100px;
+}
+
+.project-detail__card {
+    display: table;
+    margin-top: 3%;
+    padding: 0px 15px 0px 15px !important;
+    background-color: white;
+    color: #233D6C;
+    border: 1px solid #233D6C;
+}
+
+.project-detail__logo {
+    width: 15%;
+    display: table-cell;
+}
+
+.project-detail__logo img {
+    width: 80%;
+}
+
+.project-detail__info {
+    vertical-align: middle;
+    display: table-cell;
+    width: 70%;
+}
+
+.project-detail__marge {
+    display: table-cell;
+    width: 15%;
+}
+
+.project-detail__description {
+    text-align: justify;
+}
+
+
+.project-detail__exit {
+    height : 15px;
+}
+
+.project-detail__cross {
+    margin-left: 10%;
+    margin-top: 15%;
+}
+
+.project-detail__footer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.project-detail__footer > * {
+    display: inline-block;
+}
+/*
+.project-detail__header > * {
+    display: inline-block;
+}
+*/

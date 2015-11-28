@@ -1,0 +1,33 @@
+.project__url:not(:hover) {
+    color: #233D6C;
+    width: 80%;
+}
+
+.project__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    width: 85%;
+}
+
+.project__title a:not(:hover) {
+    color: #233D6C;
+}
+
+.project__slogan {
+    font-weight: bold;
+    /*text-align: justify;*/
+}
+
+.project__video {
+    padding: 10px 0px 10px 0px;
+}
+
+.project__share img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.project__blog-url {
+    width: 80%;
+}
