@@ -55,22 +55,8 @@
     padding-top: 20px;
 }
 
-.blog-link__label--bold {
-    font-weight: bold;
-}
-
 .options-bar__blog-link{
     padding-left: 10%;
-}
-
-/*.blog-link__label a {
-    vertical-align: middle;
-}*/
-
-.blog-link__label img{
-    height: 15px;
-    margin-right: 15%;
-    text-transform: uppercase;
 }
 
 .search__icon {

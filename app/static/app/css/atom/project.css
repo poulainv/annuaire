@@ -7,7 +7,6 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
-    width: 85%;
 }
 
 .project__title a:not(:hover) {
@@ -30,4 +29,8 @@
 
 .project__blog-url {
     width: 80%;
+}
+
+.project__sub_category {
+    font-weight: normal;    
 }

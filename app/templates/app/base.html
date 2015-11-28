@@ -45,12 +45,13 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-    <div class="sticky-bar">
-        <p class="blog-link__label">
-                        <a href="http://consocollaborative.com" target="_blank">
-                            <img src="{% static 'app/img/picto__arrow.png' %}" class="blog-link__arrow"> Visiter <span class="blog-link__label--bold"> le blog </span> 
-                        </a>
-        </p>
+    <div class="sticky-bar vertical-text">
+        <h4 class="blog-link__label">
+            <a href="http://consocollaborative.com" target="_blank">
+             Visiter <span class="blog-link__label--bold"> le blog </span> 
+            <img src="{% static 'app/img/picto__blog.png' %}" class="blog-link__arrow">
+            </a>
+        </h4>
     </div>
 
     {% block navbar %}

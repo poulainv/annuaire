@@ -1,10 +1,39 @@
 .sticky-bar {
     position: fixed;
-    left: 0px;
+    left: -0px;
     top: 40%;
     width: 40px;
-    background-color: white;
     z-index: 3;
-    border: 1px solid #C8C8C8;
+    writing-mode:tb-rl;
+    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    transform: rotate(-90deg);
+    white-space:nowrap;
+    /*display:block;*/
+    /*bottom:0;*/
+}
 
+.sticky-bar a:hover {
+    background-color: #80F066;
+    color: inherit;
+}
+
+.sticky-bar a {
+    border: 1px solid #C8C8C8;
+    background-color: white;
+    padding: 13px 5px 8px 8px;
+}
+
+.blog-link__label img{
+    height: 15px;
+    margin-right: 15%;
+    text-transform: uppercase;
+}
+
+
+.blog-link__label--bold {
+    font-weight: bold;
+    margin-right: 5px;
 }

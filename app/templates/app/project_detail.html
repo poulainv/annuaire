@@ -34,12 +34,13 @@
                     <h2 class="project__title"> 
                         {{ project.title }} 
                     </h2>
-                    {% for cat in project.categories.all %}
-                        <h4 class="project-view__category"> 
-                            {# category-link__label for class ? #}
+                    <div class="project-detail__sub_categories">
+                    {% for sub_cat in project.sub_categories.all %}
+                        <h4 class="project__sub_category"> 
                                 {{ sub_cat }}
                         </h4>
                     {% endfor %}
+                    </div>
                 </div>
                 <a class="project__url" href="{{ project.url }}"> 
                     {{ project.url }} 

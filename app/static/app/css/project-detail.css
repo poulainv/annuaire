@@ -11,6 +11,10 @@
     border: 1px solid #233D6C;
 }
 
+.project-detail__header > * {
+    display: inline-block;
+}
+
 .project-detail__logo {
     width: 15%;
     display: table-cell;
@@ -35,6 +39,9 @@
     text-align: justify;
 }
 
+.project-detail__sub_categories {
+    float: right;
+}
 
 .project-detail__exit {
     height : 15px;
@@ -53,8 +60,3 @@
 .project-detail__footer > * {
     display: inline-block;
 }
-/*
-.project-detail__header > * {
-    display: inline-block;
-}
-*/
