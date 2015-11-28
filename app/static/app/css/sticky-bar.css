@@ -1,7 +1,7 @@
 .sticky-bar {
     position: fixed;
     left: -0px;
-    top: 40%;
+    top: 50%;
     width: 40px;
     z-index: 3;
     writing-mode:tb-rl;

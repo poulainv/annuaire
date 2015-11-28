@@ -1,7 +1,7 @@
 {% extends "app/base.html" %}
 
 {% block navbar_main %}
-    {% include "app/navbar_main.html" %}
+    {% include "app/navbar_main.html" with category=request.GET.category%}
 {% endblock navbar_main %}
 
 {% block options_content %}
@@ -55,13 +55,16 @@
                 </div>
                 <div class="project-view__info">
                     <div class="project-view__header">
-                            <h2 class="project__title"> 
-                                <a href="{% url 'project' project.pk %}">{{ project.title }} </a>
-                            </h2>
-                        <h4 class="project-sub_category"> 
-                            {# category-link__label for class ? #}
-                            {{ category.name }} 
-                        </h4>
+                        <h2 class="project__title"> 
+                            <a href="{% url 'project' project.pk %}">{{ project.title }} </a>
+                        </h2>
+                        <div class="project-detail__sub_categories">
+                            {% for sub_cat in project.sub_categories.all %}
+                                <h4 class="project__sub_category"> 
+                                    {{ sub_cat }}
+                                </h4>
+                            {% endfor %}
+                    </div>
                     </div>
                     <p class="project__slogan"> 
                         {{ project.slogan }} 
