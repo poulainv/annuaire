@@ -31,7 +31,7 @@ h1, h2, h3, h4 {
 .content {
     width: 100%;
     padding-bottom: 2%;
-    min-height: 70%;
+    min-height: 68%;
     background-color: #F4F2F7;
     position: relative;
 }
@@ -87,6 +87,10 @@ h1, h2, h3, h4 {
 
 .category-list__item--little:hover a{
     color: black !important;
+}
+
+.category-link__picto {
+    height: 100px;
 }
 
 .category-link__picto--little {

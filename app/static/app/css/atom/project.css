@@ -4,7 +4,6 @@
 
 .project__url:not(:hover) {
     color: #233D6C;
-    width: 80%;
 }
 
 .project__title {
@@ -37,4 +36,12 @@
 
 .project__sub_category {
     font-weight: normal;    
+}
+
+.project-view__share >* {
+    display: inline-block;
+}
+
+.twitter-share-button {
+    vertical-align: text-bottom;
 }

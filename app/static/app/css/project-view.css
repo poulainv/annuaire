@@ -32,3 +32,7 @@
 .project-view__footer > * {
     display: inline-block;
 }
+
+.project-view__share {
+    float: right;
+}
