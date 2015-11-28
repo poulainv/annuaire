@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import socket
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,10 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'yi0cvdox+5vre4ny&k8up_*7sj$ylnqe-uqcu$b85w&%dk%9e6'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if socket.gethostname() == 'MacBook-Air-de-Vincent.local':
+    DEBUG = True
+else:
+    DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com']
+ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com']
 
 
 # Application definition
@@ -118,9 +121,15 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 BOWER_COMPONENTS_ROOT = BASE_DIR + '/components/'
 
-
 BOWER_INSTALLED_APPS = (
     'jquery#1.9',
     'underscore',
     'gridism'
 )
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.getenv('SENDGRID_USERNAME')
+EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+

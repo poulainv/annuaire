@@ -48,7 +48,7 @@
     text-decoration: none;
 }
 
-.footer__suggest-project button{
+.footer__suggest-project button {
     text-transform: uppercase;
     background-color: inherit;
     color: white;
@@ -57,6 +57,16 @@
     padding: 14px 18px 12px 18px; 
 }
 
+
+.foo {
+    float:right;
+    text-transform: uppercase;
+    background-color: #233D6C;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 14px 18px 12px 18px; 
+}
 .footer__suggest-project button:hover{
     background-color: #EE5730;
     cursor: pointer;

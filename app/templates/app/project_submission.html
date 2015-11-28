@@ -1,0 +1,29 @@
+{% extends "app/base.html" %}
+
+{% block navbar_main %}
+    {% include "app/navbar_main.html" %}
+{% endblock navbar_main %}
+
+
+{% block content %}
+<div class="grid">
+    <div class="unit one-fifth"></div>
+    <div class="unit three-fifths project-view">
+        <div class="project-submit__text">
+            <h3>
+                Vous souhaitez être présent sur l’annuaire de la Conso Collaborative ? 
+            </h3>
+            <p> Remplissez les informations ci-dessous
+            </p>    
+        </div>
+        
+        <hr>
+        <form action="/submission/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="foo" type="submit" value="Envoyer" />
+        </form>
+    </div>
+    <div class="unit one-fifth"></div>
+</div>
+{% endblock content %}

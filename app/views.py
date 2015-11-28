@@ -1,4 +1,9 @@
 from django.views.generic import ListView, DetailView
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail 
+from django.http import HttpResponseRedirect
+
+from .forms import SubmissionForm
 
 from .models import Project, Category
 
@@ -37,3 +42,21 @@ class ProjectDetailView(DetailView):
 
     model = Project
     context_object_name = 'project'
+
+DEFAULT_FROM_EMAIL = 'annuaire@consocollaborative.com'
+MANAGERS = ['vincent.poulain2@gmail.com']
+
+
+def submit_project(request):
+    if request.method == 'POST':
+        form = SubmissionForm(request.POST)
+        if form.is_valid():
+            send_mail('[Annuaire CC] - Demande d\'ajout de projet',
+                      'Foobar',
+                      DEFAULT_FROM_EMAIL,
+                      MANAGERS)
+        return render(request, 'app/project_submission_sent.html')
+    else:
+        form = SubmissionForm()
+
+    return render(request, 'app/project_submission.html', {'form': form})
