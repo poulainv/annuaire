@@ -12,12 +12,14 @@
 }
 
 .project-view__logo {
+    vertical-align: middle;
     display: table-cell;
     width: 26%;
 }
 
-.project-view__logo img {
-    height: 200px;
+.project-view__logo a img {
+    max-height: 90%;
+    max-width: 90%;
 }
 
 .project-view__info {

@@ -34,7 +34,8 @@ class SubCategory(models.Model):
     category = models.ForeignKey(Category, related_name='sub_categories')
 
     def __str__(self):
-        return '%s' % self.name
+        return '<{}> : {}'.format(self.category.name,
+                                  self.name)
 
     class Meta:
         verbose_name_plural = "sub_categories"
@@ -48,7 +49,7 @@ class Project(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     url = models.URLField(unique=True)
-    image = S3DirectField(dest='imgs')
+    image = S3DirectField(dest='imgs', blank=True, help_text='Le ratio de l\'image sera conservé. Préférez un format carré')
     released_date = models.DateTimeField(null=True, blank=True)
     draft = models.BooleanField(default=False)
     youtube_url = models.URLField(blank=True)
@@ -57,7 +58,8 @@ class Project(models.Model):
     facebook_url = models.CharField(max_length=50, blank=True)
     categories = models.ManyToManyField(Category, related_name='projects')
     sub_categories = models.ManyToManyField(SubCategory,
-                                            related_name='projects')
+                                            related_name='projects',
+                                            help_text='Le mieux est de sélectionner une sous catégorie appartenant à un catégorie du projet ;)')
     contact_name = models.CharField(max_length=250, blank=True)
     contact_telephone = models.CharField(max_length=20, blank=True)
     contact_mail = models.EmailField(blank=True)
@@ -75,8 +77,8 @@ class Project(models.Model):
         return Project.objects.filter(q_title | q_slogan | q_category).all()
 
 
-@receiver(pre_save, sender=Project)
-def validate_sub_category(sender, instance, **kwargs):
-    for sub_cat in instance.sub_categories.all():
-        if sub_cat.category not in instance.categories.all():
-            raise ValidationError('"%s" does not belong to any categories of this project' % sub_cat)
+# @receiver(pre_save, sender=Project)
+# def validate_sub_category(sender, instance, **kwargs):
+#     for sub_cat in instance.sub_categories.all():
+#         if sub_cat.category not in instance.categories.all():
+#             raise ValidationError('"%s" does not belong to any categories of this project' % sub_cat)

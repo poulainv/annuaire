@@ -10,6 +10,7 @@
     background: #FF5A00; /* Orange */
     width: 100%;
     height: 10%;
+    min-height: 80px;
     color: white;
     border-color: #233D6C;
     border-style: solid;

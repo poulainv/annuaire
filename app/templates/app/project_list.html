@@ -60,7 +60,7 @@
                         <div class="project-detail__sub_categories">
                             {% for sub_cat in project.sub_categories.all %}
                                 <h4 class="project__sub_category"> 
-                                    {{ sub_cat }}
+                                    {{ sub_cat.name }}
                                 </h4>
                             {% endfor %}
                     </div>
@@ -88,6 +88,18 @@
             </div>
             <div class="unit one-fifth"></div>
         </div>
+
+    {% empty %}
+    
+    <div class="grid">
+        <div class="unit one-fifth"></div>
+        <div class="unit three-fifths">
+            <h4> Pas encore de projets dans cette catégorie.</h4>
+            <p> Reviens vite. Ca ne va pas tarder !</p>
+        </div>
+        <div class="unit one-fifth"></div>
+    </div>
+
     {% endfor %}
 
 {% endblock content %}

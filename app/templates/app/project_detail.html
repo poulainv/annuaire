@@ -37,7 +37,7 @@
                     <div class="project-detail__sub">
                     {% for sub_cat in project.sub_categories.all %}
                         <h4 class="project__sub_category"> 
-                                {{ sub_cat }}
+                                {{ sub_cat.name }}
                         </h4>
                     {% endfor %}
                     </div>
@@ -55,9 +55,12 @@
                     {{ project.description }}
                 </div>
                 <div class="project-detail__footer">
-                    <div class="project__blog-url">
-                        <a href="">Article de blog</a>
-                    </div>
+                    {% if project.blog_article_url %}
+                        <div class="project__blog-url">
+                            <a href="{{ project.blog_article_url }}">Article de blog</a>
+                        </div>    
+                    {% endif %}
+                    
                     <div class="project-detail__share">
                             <div class="fb-share-button" data-href="{% url 'project' project.pk %}" data-layout="button_count"></div>
                                 <a class="twitter-share-button" href="https://twitter.com/intent/tweet"></a>
