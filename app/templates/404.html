@@ -1,0 +1,21 @@
+{% extends "app/base.html" %}
+
+{% block navbar_main %}
+    {% include "app/navbar_main.html" %}
+{% endblock navbar_main %}
+
+{% block content %}
+    <div class="grid">
+    <div class="unit one-fifth"></div>
+    <div class="unit three-fifths project-view">
+        <div class="project-submit__text">
+            <p>Ooops ! Cette page semble ne plus exister... 
+            </p>
+            <a href="{% url 'home' %}"> Retour à l'annuaire </a>
+        </div>
+    </div>
+    <div class="unit one-fifth"></div>
+</div>
+
+ 
+{% endblock content %}
