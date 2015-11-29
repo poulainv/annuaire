@@ -46,11 +46,15 @@
                     {{ project.url }} 
                 </a>
                 <p class="project__slogan"> {{ project.slogan }} </p>
-                {% if not project.youtube_url %}
+                {% if project.youtube_identifier %}
                     <div class="project__video">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/TmJBzgfppGk" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{ project.youtube_identifier }}" frameborder="0" allowfullscreen></iframe>
                     </div>
-                {% endif %}
+                {% elif project.vimeo_identifier %}
+                <div class="project__video">
+                    <iframe src="https://player.vimeo.com/video/{{ project.vimeo_identifier }}?byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                    {% endif %}
                 <div class="project-detail__description">
                     {{ project.description }}
                 </div>
