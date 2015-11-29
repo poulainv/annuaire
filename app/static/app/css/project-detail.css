@@ -21,6 +21,7 @@
 
 .project-detail__logo {
     width: 15%;
+    padding-top: 10px;
     display: table-cell;
 }
 
