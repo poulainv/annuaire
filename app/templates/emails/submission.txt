@@ -12,6 +12,7 @@ Email : {{ email }}
 
 Projet 
 
+Titre : {{ project_name }}
 Description : {{ project }}
 Lien : {{ url }}
 

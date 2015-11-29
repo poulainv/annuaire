@@ -1,7 +1,6 @@
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render, redirect
-from django.core.mail import send_mail 
-from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
 from .forms import SubmissionForm
@@ -54,7 +53,7 @@ def submit_project(request):
         if form.is_valid():
             msg_plain = render_to_string('emails/submission.txt', form.cleaned_data)
             msg_html = render_to_string('emails/submission.html', form.cleaned_data)
-            send_mail('[Annuaire CC] - Demande d\'ajout de projet',
+            send_mail('[Annuaire CC] - Demande d\'ajout de projet : {}'.format(form.cleaned_data['project_name']),
                       msg_plain,
                       DEFAULT_FROM_EMAIL,
                       MANAGERS,
