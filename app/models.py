@@ -56,8 +56,8 @@ class Project(models.Model):
     twitter_url = models.CharField(max_length=50, blank=True)
     facebook_url = models.CharField(max_length=50, blank=True)
     categories = models.ManyToManyField(Category, related_name='projects')
-    sub_categories = models.ManyToManyField(SubCategory,
-                                            related_name='projects')
+    # sub_categories = models.ManyToManyField(SubCategory,
+    #                                         related_name='projects')
     contact_name = models.CharField(max_length=250, blank=True)
     contact_telephone = models.CharField(max_length=20, blank=True)
     contact_mail = models.EmailField(blank=True)
