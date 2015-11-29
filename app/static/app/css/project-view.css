@@ -1,7 +1,7 @@
 .project-view {
     display: table;
     margin-top: 3%;
-    padding: 10px 15px 10px 15px !important;
+    padding: 0px 15px 10px 15px !important;
     background-color: white;
     color: #233D6C;
     border: 1px solid #233D6C;
@@ -12,6 +12,7 @@
 }
 
 .project-view__logo {
+    padding-top: 10px;
     vertical-align: middle;
     display: table-cell;
     width: 26%;
