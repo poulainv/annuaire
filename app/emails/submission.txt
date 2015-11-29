@@ -1,0 +1,19 @@
+Bonjour,
+
+
+Une nouvelle demande d'ajout de projet a été enregistré.
+
+
+Contact : 
+
+Prénom : {{ firstname }}
+Nom : {{ lastname }}
+Email : {{ email }}
+
+Projet 
+
+Description : {{ project }}
+Lien : {{ url }}
+
+
+A bientôt,

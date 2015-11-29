@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail 
 from django.http import HttpResponseRedirect
+from django.template.loader import render_to_string
 
 from .forms import SubmissionForm
 
@@ -51,8 +52,9 @@ def submit_project(request):
     if request.method == 'POST':
         form = SubmissionForm(request.POST)
         if form.is_valid():
+            msg_plain = render_to_string('emails/submission.txt', **form.cleaned_data)
             send_mail('[Annuaire CC] - Demande d\'ajout de projet',
-                      'Foobar',
+                      msg_plain,
                       DEFAULT_FROM_EMAIL,
                       MANAGERS)
         return render(request, 'app/project_submission_sent.html')
