@@ -52,11 +52,13 @@ def submit_project(request):
     if request.method == 'POST':
         form = SubmissionForm(request.POST)
         if form.is_valid():
-            msg_plain = render_to_string('emails/submission.txt', **form.cleaned_data)
+            msg_plain = render_to_string('emails/submission.txt', form.cleaned_data)
+            msg_html = render_to_string('emails/submission.html', form.cleaned_data)
             send_mail('[Annuaire CC] - Demande d\'ajout de projet',
                       msg_plain,
                       DEFAULT_FROM_EMAIL,
-                      MANAGERS)
+                      MANAGERS,
+                      html_message=msg_html)
         return render(request, 'app/project_submission_sent.html')
     else:
         form = SubmissionForm()
