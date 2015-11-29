@@ -47,6 +47,12 @@ INSTALLED_APPS = (
     'sass_processor'
 )
 
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_KEY')
+AWS_STORAGE_BUCKET_NAME = 'annuaire-consocollab'
+
+S3DIRECT_REGION = 'Ireland'
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
