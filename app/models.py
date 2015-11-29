@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
 from django.db import models
 from django.db.models.signals import pre_save
 from s3direct.fields import S3DirectField
