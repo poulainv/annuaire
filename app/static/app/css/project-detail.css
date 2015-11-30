@@ -65,5 +65,14 @@
 
 .project-detail__share {
     float: right;
+    text-align: center;
     margin-bottom: 20px
+}
+
+.project-detail__fb-btn {
+    padding-bottom: 10px;
+}
+
+.project-detail__twitter-btn {
+    margin-left : -23px;
 }

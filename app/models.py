@@ -73,8 +73,9 @@ class Project(models.Model):
         q_title = Q(title__icontains=query)
         q_slogan = Q(slogan__icontains=query)
         q_category = Q(categories__name__icontains=query)
+        q_sub_category = Q(sub_categories__name__icontains=query)
 
-        return Project.objects.filter(q_title | q_slogan | q_category).all()
+        return Project.objects.filter(q_title | q_slogan | q_category | q_sub_category).all()
 
 
 # @receiver(pre_save, sender=Project)
