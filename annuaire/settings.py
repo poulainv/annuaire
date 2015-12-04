@@ -30,7 +30,7 @@ if socket.gethostname() == 'MacBook-Air-de-Vincent.local':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com']
+ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 'consocollaborative.com']
 
 
 # Application definition
