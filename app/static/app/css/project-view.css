@@ -20,7 +20,7 @@
 
 .project-view__logo a img {
     max-height: 90%;
-    max-width: 90%;
+    width: 90%;
 }
 
 .project-view__info {

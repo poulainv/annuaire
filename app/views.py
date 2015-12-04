@@ -43,8 +43,8 @@ class ProjectDetailView(DetailView):
     model = Project
     context_object_name = 'project'
 
-DEFAULT_FROM_EMAIL = 'annuaire@consocollaborative.com'
-MANAGERS = ['vincent.poulain2@gmail.com']
+DEFAULT_FROM_EMAIL = 'root@consocollaborative.com'
+MANAGERS = ['vincent.poulain2@gmail.com', 'contact@consocollaborative.com ']
 
 
 def submit_project(request):
