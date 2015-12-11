@@ -19,7 +19,7 @@ class ProjectIndexView(ListView):
         if query:
             return Project.search(query)
         elif category and not sub_cat:
-            return Category.objects.get(name=category)\
+            return Category.objects.order_by('name').get(name=category)\
                 .projects.all()
         elif category and sub_cat:
             return Category.objects.get(name=category)\
@@ -46,6 +46,9 @@ class ProjectDetailView(DetailView):
 DEFAULT_FROM_EMAIL = 'root@consocollaborative.com'
 MANAGERS = ['vincent.poulain2@gmail.com', 'contact@consocollaborative.com ']
 
+
+def credits(request):
+    return render(request, 'app/credits.html')
 
 def submit_project(request):
     if request.method == 'POST':

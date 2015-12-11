@@ -24,6 +24,20 @@ h1, h2, h3, h4 {
     font-weight: normal;
 }
 
+h4 {
+    font-weight: bold;
+}
+
+h5 {
+    color: #233D6C;
+    margin: 30px 0px 10px 0px;
+}
+
+p {
+    color: black;
+    text-align: justify;
+}
+
 /*-------*/
 /*CONTENT*/
 /*-------*/
@@ -36,6 +50,14 @@ h1, h2, h3, h4 {
     position: relative;
 }
 
+
+.main-content {
+    margin-top: 3%;
+    padding: 0px 35px 25px 35px !important;
+    background-color: white;
+    color: #233D6C;
+    border: 1px solid #233D6C;
+}
 
 .category-list {
     text-transform: uppercase;

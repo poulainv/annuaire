@@ -34,9 +34,9 @@
     line-height: 3px;
     text-align: center;
     vertical-align: middle;
-    font-weight: bold;
     text-transform: uppercase;
     display: table-cell;
+    font-weight: 200;
 }
 
 .navbar__right-partner {
