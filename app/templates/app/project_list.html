@@ -32,10 +32,8 @@
 
             </div>
         {% else %}
-            <div class="options-bar__search-info">
-                <p> Recherche pour </p>
-                <p> {{ request.GET.search }} ({{ projects.count }}) </p> 
-            </div>
+                <h5>RECHERCHE POUR</h5>
+                <h2 class="options_content__subtitle">{{ request.GET.search }} <span style="font-size:14px;">({{ projects.count }})</span></h2>
         {% endif %}
     {% endwith %}
     

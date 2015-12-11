@@ -38,6 +38,16 @@ p {
     text-align: justify;
 }
 
+.options_content {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-top: 3%;
+}
+
+.options_content__subtitle {
+    margin: 0px;
+}
+
 /*-------*/
 /*CONTENT*/
 /*-------*/

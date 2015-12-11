@@ -113,7 +113,7 @@ window.twttr = (function(d, s, id) {
             <div class="unit one-fifth">
             </div>
 
-            <div class="unit three-fifths">
+            <div class="unit three-fifths options_content">
                 {% block options_content %}
                     
                 {% endblock options_content %}
@@ -121,7 +121,7 @@ window.twttr = (function(d, s, id) {
 
             <div class="unit one-fifth">
                 <div class="options-bar__search">
-                    <form type="get" action="projects">
+                    <form type="get" action="/projects">
                         <img class="search__icon" src="{% static 'app/img/picto__loupe.png' %}">
                         <input class="search__input" name="search" placeholder="Que recherchez-vous ?"></input>
                     </form>
