@@ -12,6 +12,7 @@ input, button, a {
 
 a {
     text-decoration: none;  
+    color: #233D6C;
 }
 
 a:hover {
