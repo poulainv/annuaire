@@ -53,6 +53,7 @@
 }
 
 .project-detail__cross {
+    cursor: pointer;
     margin-left: 10%;
     margin-top: 15%;
 }
