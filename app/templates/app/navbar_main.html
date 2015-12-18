@@ -8,12 +8,12 @@
                     <div class="category-link category-link--little">
                         {% if cat == category %}
                             <a class="category-link__label category-link__label--little blue" href="projects?category={{cat}}"> {{ cat }}</a>
-                            <a href="projects?category={{cat}}">
+                            <a href="/projects?category={{cat}}">
                             <img class="category-link__picto category-link__picto--little" 
                                 src="{% static picto_hover %}"></a>
                         {% else %}
-                            <a class="category-link__label category-link__label--little" href="projects?category={{cat}}"> {{ cat }}</a>
-                            <a href="projects?category={{cat}}">
+                            <a class="category-link__label category-link__label--little" href="/projects?category={{cat}}"> {{ cat }}</a>
+                            <a href="/projects?category={{cat}}">
                             <img class="category-link__picto category-link__picto--little" 
                                 src="{% static picto %}"
                                 onmouseover="this.src='{% static picto_hover %}'"
