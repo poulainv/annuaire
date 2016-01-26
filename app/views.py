@@ -10,22 +10,26 @@ from .models import Project, Category
 
 class ProjectIndexView(ListView):
     context_object_name = 'projects'
+    paginate_by = 2
 
     def get_queryset(self):
         query = self.request.GET.get('search')
         category = self.request.GET.get('category')
         sub_cat = self.request.GET.get('sub_cat')
+        # as_list = self.request.GET.get('as_list')
 
         if query:
-            return Project.search(query)
+            projects_list = Project.search(query)
         elif category and not sub_cat:
-            return Category.objects.order_by('name').get(name=category)\
+            projects_list = Category.objects.order_by('name').get(name=category)\
                 .projects.order_by('-featured').all()
         elif category and sub_cat:
-            return Category.objects.get(name=category)\
+            projects_list = Category.objects.get(name=category)\
                 .projects.order_by('-featured').filter(sub_categories__pk=sub_cat)
+        else:
+            projects_list = Project.objects.order_by('-featured').all()
 
-        return Project.objects.order_by('-featured').all()
+        return projects_list
 
     def get_context_data(self, **kwargs):
         context = super(ProjectIndexView, self).get_context_data(**kwargs)
@@ -44,12 +48,16 @@ class ProjectDetailView(DetailView):
     model = Project
     context_object_name = 'project'
 
-DEFAULT_FROM_EMAIL = 'root@consocollaborative.com'
+    query_pk_and_slug = True
+
+
+DEFAULT_FROM_EMAIL = 'contact@consocollaborative.com'
 MANAGERS = ['vincent.poulain2@gmail.com', 'contact@consocollaborative.com ']
 
 
 def credits(request):
     return render(request, 'app/credits.html')
+
 
 def submit_project(request):
     if request.method == 'POST':
