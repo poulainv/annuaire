@@ -1,7 +1,7 @@
 {% extends "app/base.html" %}
 
 {% block navbar_main %}
-    {% include "app/navbar_main.html" with category=request.GET.category%}
+    {% include "app/navbar_main.html" with category=request.GET.category %}
 {% endblock navbar_main %}
 
 {% block options_content %}
@@ -28,8 +28,6 @@
                         {% endif %}
                 {% endfor %}
         
-                {# <p> {{ projects.count }} projets trouvés :</p> #}
-
             </div>
         {% else %}
                 <h5>RECHERCHE POUR</h5>
