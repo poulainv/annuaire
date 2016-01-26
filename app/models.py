@@ -5,6 +5,8 @@ from django.db import models
 from s3direct.fields import S3DirectField
 from django.db.models import Q
 
+from autoslug import AutoSlugField
+
 
 class CategoryManager(models.Manager):
 
@@ -41,6 +43,7 @@ class SubCategory(models.Model):
 class Project(models.Model):
 
     title = models.CharField(max_length=50, unique=True)
+    slug = AutoSlugField(populate_from='title')
     slogan = models.CharField(max_length=250)
     description = models.TextField(max_length=1500)
     creation_date = models.DateTimeField(auto_now_add=True)

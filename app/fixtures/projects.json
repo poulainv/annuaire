@@ -3,6 +3,7 @@
         "model": "app.Project",
         "fields": {
             "title": "Airbnb",
+            "slug": "airbnb",
             "slogan": "Louez des logements uniques auprès d'hôtes locaux dans plus de 190 pays.",
             "description": "Airbnb est une plateforme communautaire de confiance. Elle permet de publier sur le site des logements uniques à travers le monde, de les découvrir et les réserver.",
             "creation_date": "2015-10-04T16:50:28.354Z",
@@ -23,6 +24,7 @@
         "model": "app.Project",
         "fields": {
             "title": "Drivy",
+            "slug": "drivy",
             "slogan": "Louez des voitures à des particuliers",
             "description": "Drivy est une plateforme communautaire de location de véhicule",
             "image": "http://a5.mzstatic.com/eu/r30/Purple69/v4/27/2e/88/272e883d-147c-cb0f-426f-a07716b2cf9c/icon175x175.png",
@@ -41,6 +43,7 @@
         "model": "app.Project",
         "fields": {
             "title": "Nightswapping",
+            "slug": "nightswapping",
             "slogan": "Trouver un séjour gratuit grâce au Nightswapping !",
             "description": "Nightswapping est une plateforme collaborative de voyage entre particuliers à dimension internationale qui permet de ne plus avoir à payer ses frais d'hébergement lors de ses vacances, courts séjours et/ou déplacements professionnels. \nGrâce à un concept unique, le \"Nightswapping\" (\"échange ou troc de nuits\"), il suffit d’héberger des membres chez soi pour gagner des nuits afin de pouvoir les utiliser chez d’autres membres.\nA noter que pour respecter l’équité, un algorithme évalue chaque logement dans un standing de 1 (petite chambre) à 7 (logement d’exception) et permet de convertir automatiquement les nuits acquises. La \"nuit\" devient donc une \"monnaie virtuelle\". \nLa plateforme, qui rassemble déjà plus de 10 000 hébergements et 36 000 membres, est traduite en 7 langues et est quasi-gratuite. Seuls des frais de mise en relations de 9,90€ sont facturés au voyageur.",
             "image": "http://p3.zdassets.com/hc/settings_assets/720829/200125541/8ev7srJX7eexqu0yOvGpmA-2015-02-04-4-00-48-044-logo-nightswapping-dormir-chez-habitant_5000x500.png",
@@ -58,6 +61,7 @@
         "model": "app.Project",
         "fields": {
             "title": "CouchSurfing",
+            "slug": "couchsurfing",
             "slogan": "CouchSurfing est une entreprise dont l'objet social est d'assurer un service d'hébergement temporaire, de personne à personne.",
             "description": "Chaque personne peut dialoguer et demander l'hospitalité aux autres membres, et chacun reste libre de ses engagements vis-à-vis des autres participants. Chacun peut émettre des références (positives/neutres/négatives) au sujet de leurs hôtes ou invités. Les conditions du séjour (hébergement, rencontres, activités...) sont déterminées d'un commun accord entre les utilisateurs préalablement à leur séjour. L'intérêt de ce service va au-delà du simple hébergement : c'est une possibilité de rencontres culturelles cosmopolites, à moindre coût, et sécurisées grâce au système de recommandation.",
             "vimeo_identifier": "112137027",
@@ -76,6 +80,7 @@
         "model": "app.Project",
         "fields": {
             "title": "Smoovup",
+            "slug": "smoovup",
             "slogan": "Le but de SmoovUp est de te mettre en relation avec les smoovers’ qui te correspondent, qui ont des habitudes de vie, et des hobbies similaires : pour une coloc' harmonieuse !",
             "description": "On va commencer par se présenter : La vie en coloc’, Léo et moi l’avons tous les deux connues, en France et en Australie, et clairement, quand tout se passe bien, c’est une expérience géniale ! Mais malheureusement aussi, quand ça ne passe pas si bien que ça, la coloc’ peut vite devenir un cauchemar… Le but de SmoovUp est vraiment de te mettre en relation avec les smoovers’ qui te correspondent, qui ont des habitudes de vie, des goûts et des hobbies similaires, et ce, pour favoriser une colocation harmonieuse, pleine de bonne humeur !",
             "image": "http://1.bp.blogspot.com/-aQaKRhqqEKU/T8clxH7bsOI/AAAAAAAACns/UKhlpJ_1twY/s1600/greg%2BSmoovUp.jpg",
@@ -93,6 +98,7 @@
         "model": "app.Project",
         "fields": {
             "title": "BlablaCar",
+            "slug": "blablacar",
             "slogan": "BlablaCar : Voyagez moins cher en toute confiance - 2 Millions de conducteurs et passagers. Départs immédiats !",
             "description": "Notre ambition : rendre le covoiturage toujours plus facile, fiable et efficace en mettant simplement en relation des conducteurs effectuant un trajet, ponctuel ou régulier, et des passagers souhaitant effectuer ce même trajet. Le but : faire ainsi coïncider les besoins, partager les frais entre covoitureurs, optimiser l’utilisation des véhicules et réduire notre impact sur notre planète par une réduction de nos émissions de CO2. Tout le monde a à y gagner !",
             "creation_date": "2015-10-05T16:50:28.354Z",
@@ -111,6 +117,7 @@
         "model": "app.Project",
         "fields": {
             "title": "La Ruche qui dit Oui !",
+            "slug": "la-ruche-qui-dit-oui",
             "slogan": "La Ruche qui dit Oui ! permet de vous réunir pour acheter directement aux producteurs de votre région.",
             "description": "Comment ça marche ?\r\nC'est en combinant circuits courts et achats groupés que La Ruche qui Dit Oui ! permet aux producteurs et aux consommateurs de bénéficier de meilleurs prix.\r\nQue fait l'équipe de la Ruche qui dit Oui ! ?\r\n– Offre un site efficace pour organiser le commerce avec les producteurs.\r\n– Vérifie les certifications relative à l'hygiène et les labels des fournisseurs. \r\n– Sécurise les paiements et gère la comptabilité des Ruches.",
             "creation_date": "2015-10-05T16:50:28.354Z",
