@@ -2,10 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from django.db import models
-from django.db.models.signals import pre_save
 from s3direct.fields import S3DirectField
-from django.dispatch import receiver
-from django.core.exceptions import ValidationError
 from django.db.models import Q
 
 
@@ -72,10 +69,11 @@ class Project(models.Model):
     def search(cls, query):
         q_title = Q(title__icontains=query)
         q_slogan = Q(slogan__icontains=query)
+        q_description = Q(description__icontains=query)
         q_category = Q(categories__name__icontains=query)
         q_sub_category = Q(sub_categories__name__icontains=query)
 
-        return Project.objects.filter(q_title | q_slogan | q_category | q_sub_category).all()
+        return Project.objects.filter(q_title | q_slogan | q_category | q_sub_category | q_description).all()
 
 
 # @receiver(pre_save, sender=Project)
