@@ -52,6 +52,7 @@ class Project(models.Model):
     image = S3DirectField(dest='imgs', blank=True, help_text='Le ratio de l\'image sera conservé. Préférez un format carré')
     released_date = models.DateTimeField(null=True, blank=True)
     draft = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
     youtube_identifier = models.CharField(blank=True, max_length=20, help_text='Fournir l\'identifiant youtube situé après "v=" dans l\'URL par exemple "2xegsh1CmPU" dans "https://www.youtube.com/watch?v=2xegsh1CmPU"')
     vimeo_identifier = models.CharField(blank=True, max_length=20, help_text='Fournir l\'identifiant videmo situé, par exemple "112137027" dans "https://vimeo.com/112137027". Attention la vidéo Youtube est affichée prioritairement si deux identifiants sont fournit.')
     twitter_url = models.CharField(max_length=50, blank=True)

@@ -20,16 +20,17 @@ class ProjectIndexView(ListView):
             return Project.search(query)
         elif category and not sub_cat:
             return Category.objects.order_by('name').get(name=category)\
-                .projects.all()
+                .projects.order_by('-featured').all()
         elif category and sub_cat:
             return Category.objects.get(name=category)\
-                .projects.filter(sub_categories__pk=sub_cat)
+                .projects.order_by('-featured').filter(sub_categories__pk=sub_cat)
 
-        return Project.objects.all()
+        return Project.objects.order_by('-featured').all()
 
     def get_context_data(self, **kwargs):
         context = super(ProjectIndexView, self).get_context_data(**kwargs)
         category_name = self.request.GET.get('category')
+        
         if category_name:
             category = Category.objects.get(name=category_name)
             context['category'] = category
