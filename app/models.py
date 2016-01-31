@@ -60,7 +60,8 @@ class Project(models.Model):
     categories = models.ManyToManyField(Category, related_name='projects')
     sub_categories = models.ManyToManyField(SubCategory,
                                             related_name='projects',
-                                            help_text='Le mieux est de sélectionner une sous catégorie appartenant à un catégorie du projet ;)')
+                                            help_text='Le mieux est de sélectionner une sous catégorie appartenant à un catégorie du projet ;)',
+                                            blank=True)
     contact_name = models.CharField(max_length=250, blank=True)
     contact_telephone = models.CharField(max_length=20, blank=True)
     contact_mail = models.EmailField(blank=True)
