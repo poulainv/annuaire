@@ -90,16 +90,9 @@
     padding-right: 3%;
     vertical-align: middle;
     text-transform: uppercase;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
-
-/*.options-bar__sub-categories {
-    margin-top: 5%;
-}*/
-/*
-.sub-category a {
-    color: #233D6C;
-    text-decoration: none;
-}*/
 
 .category-link {
     text-align: center;
