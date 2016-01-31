@@ -5,27 +5,27 @@ from django.template.loader import render_to_string
 
 from .forms import SubmissionForm
 
-from .models import Project, Category
+from .models import Project, Category, SubCategory
 
 
 class ProjectIndexView(ListView):
     context_object_name = 'projects'
-    paginate_by = 2
+    paginate_by = 20
 
     def get_queryset(self):
         query = self.request.GET.get('search')
         category = self.request.GET.get('category')
-        sub_cat = self.request.GET.get('sub_cat')
+        sub_cats = self.request.GET.get('sub_cat')
         # as_list = self.request.GET.get('as_list')
 
         if query:
             projects_list = Project.search(query)
-        elif category and not sub_cat:
+        elif category and not sub_cats:
             projects_list = Category.objects.order_by('name').get(name=category)\
                 .projects.order_by('-featured').all()
-        elif category and sub_cat:
+        elif category and sub_cats:
             projects_list = Category.objects.get(name=category)\
-                .projects.order_by('-featured').filter(sub_categories__pk=sub_cat)
+                .projects.order_by('-featured').filter(sub_categories__pk__in=sub_cats.split(','))
         else:
             projects_list = Project.objects.order_by('-featured').all()
 
@@ -34,12 +34,17 @@ class ProjectIndexView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ProjectIndexView, self).get_context_data(**kwargs)
         category_name = self.request.GET.get('category')
-        
+        selected_sub_cats = self.request.GET.get('sub_cat')
+
         if category_name:
             category = Category.objects.get(name=category_name)
             context['category'] = category
             context['sub_categories'] = category\
                 .sub_categories.all()
+
+        if selected_sub_cats:
+            context['selected_sub_categories'] = SubCategory.objects.filter(pk__in=selected_sub_cats.split(','))
+
         return context
 
 

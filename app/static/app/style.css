@@ -40,10 +40,15 @@ p {
     text-align: justify;
 }
 
+.display-options > * {
+    margin: 5px 9% 0px 0px;
+    height: 16px;
+
+}
+
 .options_content {
     padding-left: 0px !important;
     padding-right: 0px !important;
-    margin-top: 2%;
 }
 
 .options_content__subtitle {

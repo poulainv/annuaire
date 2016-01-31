@@ -54,7 +54,7 @@
 }
 
 .options-bar__search {
-    padding-top: 20px;
+    padding-top: 7px;
 }
 
 .options-bar__blog-link{
@@ -91,7 +91,7 @@
     vertical-align: middle;
     text-transform: uppercase;
     margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: bold;
 }
 

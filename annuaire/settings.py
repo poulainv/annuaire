@@ -36,13 +36,13 @@ ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1', 'stormy-citadel-1861.herokuapp.c
 # Application definition
 
 INSTALLED_APPS = (
+    'app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
     's3direct',
     'djangobower',
     'sass_processor'

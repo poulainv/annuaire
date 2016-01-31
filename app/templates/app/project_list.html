@@ -6,13 +6,13 @@
 
 {% block options_content %}
     {% load static %}
-    {% with request.GET.sub_cat|add:"0" as selected_sub_cat %}
+    {% load query_string %}
         {% if not request.GET.search %}
             <div class="options-bar__sub-categories">
                 {% for sub_cat in sub_categories %}
-                        {% if selected_sub_cat == sub_cat.pk %}
+                        {% if sub_cat in selected_sub_categories %}
                             <p class="sub-category">
-                                <a href="{% url 'projects' %}?category={{request.GET.category}}">
+                                <a href="{% url 'projects' %}/{% query_string '' sub_cat.pk %}">
                                 <img 
                                     src="{% static 'app/img/picto__circle-full.png' %}">
                                     {{ sub_cat.name }}
@@ -20,7 +20,7 @@
                             </p>
         {% else %}
                             <p class="sub-category sub-category--deactivate">
-                                <a href="{% url 'projects' %}?category={{request.GET.category}}&sub_cat={{sub_cat.pk}}">
+                                <a href="{% url 'projects' %}/{% query_string sub_cat.pk ''%}">
                                 <img src="{% static 'app/img/picto__circle-empty.png' %}">
                                     {{ sub_cat.name }}
                                 </a>

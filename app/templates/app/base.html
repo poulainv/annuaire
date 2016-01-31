@@ -109,7 +109,22 @@ window.twttr = (function(d, s, id) {
     {% endblock navbar %}
 
     {% block options %}
-        
+        <div class="grid no-stacking-on-mobiles">
+          <div class="unit one-fifth">
+          </div>
+
+          <div class="unit three-fifths">
+          </div>
+
+          <div class="unit one-fifth">
+                <div class="options-bar__search">
+                    <form type="get" action="/projects">
+                        <img class="search__icon" src="{% static 'app/img/picto__loupe.png' %}">
+                        <input class="search__input" name="search" placeholder="Que recherchez-vous ?"></input>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="options-bar grid no-stacking-on-mobiles">
             <div class="unit one-fifth">
             </div>
@@ -121,13 +136,12 @@ window.twttr = (function(d, s, id) {
             </div>
 
             <div class="unit one-fifth">
-                <div class="options-bar__search">
-                    <form type="get" action="/projects">
-                        <img class="search__icon" src="{% static 'app/img/picto__loupe.png' %}">
-                        <input class="search__input" name="search" placeholder="Que recherchez-vous ?"></input>
-                    </form>
-                </div>
+              {% block display_options %}
+              
+              {% endblock display_options %}
+
             </div>
+            
         </div>
 
 
