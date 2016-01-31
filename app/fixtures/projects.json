@@ -16,7 +16,7 @@
             "categories": [
                 ["habitat"]
             ],
-            "sub_categories": [3]
+            "sub_categories": [14]
         },
         "pk": 1
     },
@@ -53,7 +53,7 @@
             "categories": [
                 ["habitat"]
             ],
-            "sub_categories": [3]
+            "sub_categories": [18]
         },
         "pk": 3
     },
@@ -72,7 +72,7 @@
             "categories": [
                 ["habitat"], ["services"]
             ],
-            "sub_categories": [3]
+            "sub_categories": [14]
         },
         "pk": 4
     },
@@ -90,7 +90,7 @@
             "categories": [
                 ["habitat"]
             ],
-            "sub_categories": [4]
+            "sub_categories": [17]
         },
         "pk": 5
     },

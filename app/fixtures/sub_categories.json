@@ -2,7 +2,7 @@
     {
         "model": "app.SubCategory",
         "fields": {
-            "name": "Location de véhicules",
+            "name": "Auto-partage",
             "category": ["mobilite"]
         },
         "pk": 1
@@ -15,20 +15,212 @@
         },
         "pk": 2
     },
-    {   
+    {
         "model": "app.SubCategory",
         "fields": {
-            "name": "Logement chez l'habitant",
-            "category": ["habitat"]
+            "name": "Vélo",
+            "category": ["mobilite"]
         },
         "pk": 3
+    },
+    {
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Bateau",
+            "category": ["mobilite"]
+        },
+        "pk": 4
+    },
+    {
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Parking",
+            "category": ["mobilite"]
+        },
+        "pk": 5
+    },
+    {
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Marchandise",
+            "category": ["mobilite"]
+        },
+        "pk": 6
     },
     {   
         "model": "app.SubCategory",
         "fields": {
-            "name": "Recherche de colocation",
+            "name": "Local",
+            "category": ["alimentation"]
+        },
+        "pk": 7
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Restauration",
+            "category": ["alimentation"]
+        },
+        "pk": 8
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Devise",
+            "category": ["finance"]
+        },
+        "pk": 9
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Financement participatif",
+            "category": ["finance"]
+        },
+        "pk": 10
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "A domicile",
+            "category": ["services"]
+        },
+        "pk": 11
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Évènements",
+            "category": ["services"]
+        },
+        "pk": 12
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Tourisme",
+            "category": ["services"]
+        },
+        "pk": 13
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Courte durée",
             "category": ["habitat"]
         },
-        "pk": 4
+        "pk": 14
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Longue durée",
+            "category": ["habitat"]
+        },
+        "pk": 15
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Camping",
+            "category": ["habitat"]
+        },
+        "pk": 16
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Colocation",
+            "category": ["habitat"]
+        },
+        "pk": 17
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Echange",
+            "category": ["habitat"]
+        },
+        "pk": 18
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Stockage",
+            "category": ["habitat"]
+        },
+        "pk": 19
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Co-working",
+            "category": ["habitat"]
+        },
+        "pk": 20
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Mode",
+            "category": ["biens"]
+        },
+        "pk": 21
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Art & Artisanat",
+            "category": ["biens"]
+        },
+        "pk": 22
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Livre",
+            "category": ["biens"]
+        },
+        "pk": 23
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Jouets",
+            "category": ["biens"]
+        },
+        "pk": 24
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Général",
+            "category": ["biens"]
+        },
+        "pk": 25
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Cours",
+            "category": ["savoir"]
+        },
+        "pk": 26
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Troc",
+            "category": ["savoir"]
+        },
+        "pk": 27
+    },
+    {   
+        "model": "app.SubCategory",
+        "fields": {
+            "name": "Cuisine",
+            "category": ["savoir"]
+        },
+        "pk": 28
     }
 ]
