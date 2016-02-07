@@ -1,0 +1,44 @@
+<div class="grid no-stacking-on-mobiles">
+    <div class="unit one-fifth"></div>
+    <div class="project-view unit three-fifths">
+        <div class="project-view__logo">
+            <a href="{% url 'project' project.pk %}">
+                <img src="{{ project.image }}">
+            </a>
+        </div>
+        <div class="project-view__info">
+            <div class="project-view__header">
+                <h2 class="project__title"> 
+                    <a href="{% url 'project' project.slug %}">{{ project.title }} </a>
+                </h2>
+                <div class="project-detail__sub_categories">
+                    {% for sub_cat in project.sub_categories.all %}
+                        <h4 class="project__sub_category"> 
+                            {{ sub_cat.name }}
+                        </h4>
+                    {% endfor %}
+                </div>
+            </div>
+            <p class="project__slogan"> 
+                {{ project.slogan }} 
+            </p>
+            <p class="project__description"> 
+                {{ project.description | truncatechars:120 }} 
+            </p>
+            <div class="project-view__footer">
+                <a class="project__url" href="{{ project.url }}"> 
+                {{ project.url }} 
+                </a>
+                <div class="project-view__share">
+                    <div>
+                        <div class="fb-share-button" data-href="{% url 'project' project.pk %}" data-layout="button_count"></div>
+                    </div>
+                    <div>
+                        <a class="twitter-share-button" href="https://twitter.com/intent/tweet"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="unit one-fifth"></div>
+</div>

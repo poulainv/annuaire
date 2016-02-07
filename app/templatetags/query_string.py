@@ -4,6 +4,10 @@ import datetime
 
 register = template.Library()
 
+@register.simple_tag(takes_context=True)
+def current_qs(context):
+    return to_query_string(context["request"].GET)
+
 @register.tag
 def query_string(parser, token):
     """
@@ -27,16 +31,19 @@ def query_string(parser, token):
     http://www.url.com/{% query_string "page=page_obj.number" "sort" %} 
     
     """
-    tag_name, add, remove = token.split_contents()
+    tag_name, name, add, remove = token.split_contents()
 
     if add == "''":
         add = None
     if remove == "''":
         remove = None
-    return QueryStringNode(add, remove)
+    return QueryStringNode(name, add, remove)
 
 class QueryStringNode(template.Node):
-    def __init__(self, add,remove):
+
+    def __init__(self, name, add,remove):
+
+        self.name = name
         self.add = add
         self.remove = remove
         
@@ -44,25 +51,35 @@ class QueryStringNode(template.Node):
         p = {}
         for k, v in context["request"].GET.items():
             p[k] = v
-        return get_query_string(p, self.add, self.remove, context)
+        return get_query_string(p, self.name, self.add, self.remove, context)
 
-def get_query_string(p, add, remove, context):
+def get_query_string(p, name, add, remove, context):
     """
     Add and remove query parameters. From `django.contrib.admin`.
     """
-    # import pdb; pdb.set_trace()
-    sub_cats = p.pop('sub_cat', set())
-    if sub_cats:
-        sub_cats = set([str(x) for x in sub_cats.split(',')])
-    if add:
-        sub_cats.add(get_resolved_data(add, context))
-    if remove:
-        sub_cats.remove(get_resolved_data(remove, context))
+    new_qs = p.pop(name, set())
 
-    qs = '&amp;'.join([u'%s=%s' % (k, v) for k, v in p.items()]).replace(' ', '%20')
-    if sub_cats:
-        qs = qs + '&amp;sub_cat=' + ','.join(sub_cats)
+    if new_qs:
+        new_qs = set([str(x) for x in new_qs.split(',')])
+    else:
+        new_qs = set()
+
+    if add:
+        new_qs.add(get_resolved_data(add, context))
+    if remove:
+        try:
+            new_qs.remove(get_resolved_data(remove, context))
+        except KeyError:
+            pass
+
+    qs = to_query_string(p)
+
+    if new_qs:
+        qs = qs + '&amp;{}='.format(name) + ','.join(new_qs)
     return mark_safe('?' + qs)
+
+def to_query_string(items):
+    return '&amp;'.join([u'%s=%s' % (k, v) for k, v in items.items()]).replace(' ', '%20')
 
 def get_resolved_data(data, context):
     return str(template.Variable(data).resolve(context))

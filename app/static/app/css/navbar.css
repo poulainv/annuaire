@@ -86,13 +86,13 @@
 /*------*/
 
 .sub-category {
+    font-family: CooperHewitt-Medium;
     display: inline-block;
     padding-right: 3%;
     vertical-align: middle;
     text-transform: uppercase;
     margin-bottom: 0px;
     margin-top: 5px;
-    font-weight: bold;
 }
 
 .category-link {
@@ -103,9 +103,7 @@
     height: 15px;
 }
 
-.sub-category--deactivate {
-    font-weight: normal;
-}
 .sub-category--deactivate a:not(:hover) {
-    color: #919EB3;
+    color: #BCC4D3;
 }
+

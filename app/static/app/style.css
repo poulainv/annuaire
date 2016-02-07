@@ -4,15 +4,24 @@ html, body {
     position: relative;
     height: 100%;
     min-width: 1200px;
-    font-family: 'CooperHewitt';
+    font-family: 'CooperHewitt-Medium';
 }
 
-input, button, a {
-    font-family: 'CooperHewitt';
+.grid .three-fifths, .grid .w-3-5 {
+    width: 68%;
+}
+
+.grid .one-fifth, .grid .w-1-5 {
+    width: 16%;
+}
+
+
+input, button{
+    font-family: 'CooperHewitt-Medium';
 }
 
 a {
-    text-decoration: none;  
+    text-decoration: none;
     color: #233D6C;
 }
 
@@ -20,13 +29,14 @@ a:hover {
     color: #EE5730;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
+    font-family: 'CooperHewitt-Bold';
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: normal;
 }
 
 h4 {
+    text-transform: uppercase;
     font-weight: bold;
 }
 
@@ -40,15 +50,10 @@ p {
     text-align: justify;
 }
 
-.display-options > * {
+.display-options > a >* {
     margin: 5px 9% 0px 0px;
     height: 16px;
 
-}
-
-.options_content {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
 }
 
 .options_content__subtitle {

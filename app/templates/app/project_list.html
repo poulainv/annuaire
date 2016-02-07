@@ -12,7 +12,7 @@
                 {% for sub_cat in sub_categories %}
                         {% if sub_cat in selected_sub_categories %}
                             <p class="sub-category">
-                                <a href="{% url 'projects' %}/{% query_string '' sub_cat.pk %}">
+                                <a href="{% url 'projects' %}/{% query_string sub_cat '' sub_cat.pk %}">
                                 <img 
                                     src="{% static 'app/img/picto__circle-full.png' %}">
                                     {{ sub_cat.name }}
@@ -20,7 +20,7 @@
                             </p>
         {% else %}
                             <p class="sub-category sub-category--deactivate">
-                                <a href="{% url 'projects' %}/{% query_string sub_cat.pk ''%}">
+                                <a href="{% url 'projects' %}/{% query_string sub_cat sub_cat.pk '' %}">
                                 <img src="{% static 'app/img/picto__circle-empty.png' %}">
                                     {{ sub_cat.name }}
                                 </a>
@@ -33,70 +33,49 @@
                 <h5>RECHERCHE POUR</h5>
                 <h2 class="options_content__subtitle">{{ request.GET.search }} <span style="font-size:14px;">({{ projects.count }})</span></h2>
         {% endif %}
-    {% endwith %}
     
 {% endblock options_content %}
 
+{% block display_options %}
+    {% with request.GET.display as display %}
+        <div class="display-options">
+        <a href="{% url 'projects' %}/{% query_string as_list 'true' 'false' %}">
+          <img class="picto-list 
+            {% if display == 'card' %} picto-list--deactivate {% endif %}" 
+            src="{% static 'app/img/picto__list.png' %}" alt="">
+        </a>
+        <a href="{% url 'projects' %}/{% query_string as_list 'false' 'true' %}">
+          <img 
+            class="picto-card
+            {% if not display or display == 'list' %} picto-card--deactivate {% endif %}" 
+            src="{% static 'app/img/picto__card.png' %}" alt=""></a>
+        </div>
+    {% endwith %}
+{% endblock display_options %}
+
 {% block content %}
+        {% if request.GET.as_list == 'true' %}
+            {% for project in projects %}
+                {% include "app/overview_list.html" with project=project %}
+            {% empty %}
+                {% include "app/project_list_empty.html" %}
+            {% endfor %}
+        
+        {% else %}
 
-    {% for project in projects %}
-        <div class="grid no-stacking-on-mobiles">
-            <div class="unit one-fifth"></div>
-            <div class="project-view unit three-fifths">
-                <div class="project-view__logo">
-                    <a href="{% url 'project' project.pk %}">
-                        <img src="{{ project.image }}">
-                    </a>
-                </div>
-                <div class="project-view__info">
-                    <div class="project-view__header">
-                        <h2 class="project__title"> 
-                            <a href="{% url 'project' project.pk %}">{{ project.title }} </a>
-                        </h2>
-                        <div class="project-detail__sub_categories">
-                            {% for sub_cat in project.sub_categories.all %}
-                                <h4 class="project__sub_category"> 
-                                    {{ sub_cat.name }}
-                                </h4>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <p class="project__slogan"> 
-                        {{ project.slogan }} 
-                    </p>
-                    <p class="project__description"> 
-                        {{ project.description | truncatechars:120 }} 
-                    </p>
-                    <div class="project-view__footer">
-                        <a class="project__url" href="{{ project.url }}"> 
-                        {{ project.url }} 
-                        </a>
-                        <div class="project-view__share">
-                            <div>
-                                <div class="fb-share-button" data-href="{% url 'project' project.pk %}" data-layout="button_count"></div>
-                            </div>
-                            <div>
-                                <a class="twitter-share-button" href="https://twitter.com/intent/tweet"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid no-stacking-on-mobiles">
+                <div class="unit one-fifth"></div>
+                <div class="unit three-fifths project-cards">
+                    {% for project in projects %}
+                        {% include "app/overview_card.html" with project=project %}
+                    {% empty %}
+                        {% include "app/project_list_empty.html" %}
+                    {% endfor %}
             </div>
-            <div class="unit one-fifth"></div>
-        </div>
+                <div class="unit one-fifth"></div>
+            </div>
 
-    {% empty %}
-    
-    <div class="grid">
-        <div class="unit one-fifth"></div>
-        <div class="unit three-fifths">
-            <h4> Pas encore de projets dans cette catégorie.</h4>
-            <p> Ca ne va pas tarder !</p>
-        </div>
-        <div class="unit one-fifth"></div>
-    </div>
-
-    {% endfor %}
+        {% endif %}
 
         {% if is_paginated %}
             <div class="pagination">
@@ -113,6 +92,7 @@
                 </span>
             </div>
         {% endif %}
+
 {% endblock content %}
 
 

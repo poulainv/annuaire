@@ -1,25 +1,28 @@
 @font-face {
-  font-family: CooperHewitt;
+  font-family: CooperHewitt-Light;
   src: url('../../app/fonts/CooperHewitt-Light.otf');
 }
 
 
 @font-face {
-  font-family: CooperHewitt;
+  font-family: CooperHewitt-Medium;
   src: url('../../app/fonts/CooperHewitt-Medium.otf');
   font-weight: bold;
 }
 
 
 @font-face {
-  font-family: CooperHewitt;
+  font-family: CooperHewitt-Bold;
   src: url('../../app/fonts/CooperHewitt-Bold.otf');
-  font-weight: 200;
 }
 
 
 @font-face {
-  font-family: CooperHewitt;
+  font-family: CooperHewitt-Thin;
   src: url('../../app/fonts/CooperHewitt-Thin.otf');
-  font-weight: 100;
+}
+
+@font-face {
+  font-family: CooperHewitt-Book;
+  src: url('../../app/fonts/CooperHewitt-Book.otf');
 }

@@ -2,6 +2,14 @@
     color: #233D6C;
 }
 
+.project__logo--little {
+    min-width: 97px;
+}
+
+.project__url {
+    font-family: 'CooperHewitt-Book';
+}
+
 .project__url:not(:hover) {
     color: #233D6C;
 }
@@ -10,16 +18,13 @@
     text-transform: uppercase;
     font-weight: 200;
     font-size: 20px;
+    margin: 3px 0px 3px 0px;
 }
 
 .project__title a:not(:hover) {
     color: #233D6C;
 }
 
-.project__slogan {
-    font-weight: bold;
-    /*text-align: justify;*/
-}
 
 .project__video {
     padding: 10px 0px 10px 0px;
@@ -36,13 +41,19 @@
 }
 
 .project__sub_category {
-    font-weight: normal;    
+    font-weight: normal;
+    font-size: 14px;
+    margin: 5px 3px 3px 0px;
 }
 
-.project-view__share >* {
+.project-view__share > * {
     display: inline-block;
 }
 
 .twitter-share-button {
     vertical-align: text-bottom;
+}
+
+.project__description {
+    opacity: 0.8;
 }

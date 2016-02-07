@@ -40,10 +40,6 @@
     width: 15%;
 }
 
-.project-detail__description {
-    text-align: justify;
-}
-
 .project-detail__sub_categories {
     float: right;
 }
