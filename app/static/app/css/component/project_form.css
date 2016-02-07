@@ -14,7 +14,7 @@ label {
     display: none;
 }
 
-form input, textarea{
+.project-form > form input, textarea{
     border: 1px solid #233D6C;
     margin-top: 10px;
     padding: 8px 5px 5px 5px;

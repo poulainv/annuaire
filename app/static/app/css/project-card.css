@@ -8,7 +8,7 @@
 
 .project-card {
     position: relative;
-    margin: 2% 15px 0% 0%;
+    margin: 20px 15px 0px 0px;
     padding: 15px 15px 15px 15px;
     min-height: 260px;
     background-color: white;
@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100%;
     min-height: 112px;
 }
 
@@ -33,6 +32,7 @@
 .project-card__top-header {
     flex: 0 0 55%;
     position: relative;
+    height: 112px;
 }   
 
 .project-card__url {

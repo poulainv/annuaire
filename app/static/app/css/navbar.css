@@ -65,7 +65,8 @@
 .search__input {
     color: #BCC3D0;
     border: none;
-    margin-left: 10%;
+    margin-left: 30px;
+    width: 70px;
     font-size: 0.9em;
 }
 
