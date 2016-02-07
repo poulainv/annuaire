@@ -49,16 +49,12 @@
 /*------*/
 
 
-.options-bar {
-    min-height: 10%;
-}
-
 .options-bar__search {
     padding-top: 7px;
 }
 
 .options-bar__blog-link{
-    padding-left: 10%;
+    padding-left: 5%;
 }
 
 .search__icon {

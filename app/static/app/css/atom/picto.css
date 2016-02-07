@@ -1,0 +1,35 @@
+.picto-list {
+    background: url('../../../app/img/picto_lists.png') no-repeat top left;
+    background-size: cover;
+    height: 16px;
+    width: 19px;
+    background-position: left center;
+    display: inline-block;
+}
+
+.picto-list--deactivated {
+    background-position: right center;
+}
+
+.picto-list--deactivated:hover {
+    background-position: left center;
+}
+
+.picto-card {
+    background: url('../../../app/img/picto_cards.png') no-repeat top left;
+    background-size: cover;
+    height: 16px;
+    width: 19px;
+    background-position: left center;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.picto-card--deactivated {
+    background-position: right center;
+}
+
+.picto-card--deactivated:hover {
+    background-position: left center;
+}
+

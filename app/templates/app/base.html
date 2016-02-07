@@ -15,6 +15,7 @@
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'gridism/gridism.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/font.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/atom/picto.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/navbar.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/footer.css' %}" />
@@ -121,7 +122,7 @@ window.twttr = (function(d, s, id) {
                 <div class="options-bar__search">
                     <form type="get" action="/projects">
                         <img class="search__icon" src="{% static 'app/img/picto__loupe.png' %}">
-                        <input class="search__input" name="search" placeholder="Que recherchez-vous ?"></input>
+                        <input class="search__input" name="search" placeholder="Recherche"></input>
                     </form>
                 </div>
             </div>

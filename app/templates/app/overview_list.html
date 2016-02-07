@@ -2,7 +2,7 @@
     <div class="unit one-fifth"></div>
     <div class="project-view unit three-fifths">
         <div class="project-view__logo">
-            <a href="{% url 'project' project.pk %}">
+            <a href="{% url 'project' project.slug %}">
                 <img src="{{ project.image }}">
             </a>
         </div>
@@ -23,7 +23,7 @@
                 {{ project.slogan }} 
             </p>
             <p class="project__description"> 
-                {{ project.description | truncatechars:120 }} 
+                {{ project.description | truncatechars:180 }} 
             </p>
             <div class="project-view__footer">
                 <a class="project__url" href="{{ project.url }}"> 

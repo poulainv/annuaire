@@ -18,7 +18,7 @@
     text-transform: uppercase;
     font-weight: 200;
     font-size: 20px;
-    margin: 3px 0px 3px 0px;
+    margin: 0px 0px 3px 0px;
 }
 
 .project__title a:not(:hover) {
@@ -56,4 +56,5 @@
 
 .project__description {
     opacity: 0.8;
+    text-align: justify;
 }

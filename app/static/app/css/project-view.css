@@ -1,10 +1,12 @@
 .project-view {
-    display: table;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-top: 3%;
-    padding: 10px 15px 10px 15px !important;
-    background-color: white;
-    color: #233D6C;
+    padding: 15px 30px 10px 30px !important;
+    min-height: 220px;
     border: 1px solid #233D6C;
+    background-color: white;
 }
 
 .project-view:hover {
@@ -12,20 +14,21 @@
 }
 
 .project-view__logo {
-    padding-top: 10px;
-    vertical-align: middle;
-    display: table-cell;
-    width: 26%;
-}
-
-.project-view__logo a img {
-    max-height: 90%;
-    width: 90%;
+    width: 160px;
 }
 
 .project-view__info {
-    vertical-align: middle;
-    display: table-cell;
+    flex-grow: 2;
+    width: 200px;
+}
+
+.project-view__logo img {
+    width: 100%;
+}
+
+.project-view__info {
+    margin-left: 20px; 
+    align-self: flex-start;
 }
 
 .project-view__header > * {

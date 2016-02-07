@@ -5,7 +5,7 @@
 .project-detail__card {
     display: table;
     margin-top: 3%;
-    padding: 0px 15px 0px 15px !important;
+    padding: 15px 30px 10px 30px !important;
     background-color: white;
     color: #233D6C;
     border: 1px solid #233D6C;

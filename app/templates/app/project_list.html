@@ -37,18 +37,15 @@
 {% endblock options_content %}
 
 {% block display_options %}
-    {% with request.GET.display as display %}
+    {% with request.GET.as_list as as_list %}
         <div class="display-options">
-        <a href="{% url 'projects' %}/{% query_string as_list 'true' 'false' %}">
-          <img class="picto-list 
-            {% if display == 'card' %} picto-list--deactivate {% endif %}" 
-            src="{% static 'app/img/picto__list.png' %}" alt="">
+        <a class="picto-list {% if as_list == 'false' %} picto-list--deactivated {% endif %}" 
+            href="{% url 'projects' %}/{% query_string as_list 'true' 'false' %}">
         </a>
-        <a href="{% url 'projects' %}/{% query_string as_list 'false' 'true' %}">
-          <img 
-            class="picto-card
-            {% if not display or display == 'list' %} picto-card--deactivate {% endif %}" 
-            src="{% static 'app/img/picto__card.png' %}" alt=""></a>
+        <a class="picto-card
+            {% if not as_list or as_list == 'true' %} picto-card--deactivated {% endif %}" 
+            href="{% url 'projects' %}/{% query_string as_list 'false' 'true' %}">
+        </a>
         </div>
     {% endwith %}
 {% endblock display_options %}
