@@ -11,13 +11,11 @@
 
 {% endblock options_content %}
 
-
-
 {% block content %}
 <div class="grid">
     <div class="unit one-fifth"></div>
-    <div class="unit three-fifths project-view">
-        <div class="project-submit__text">
+    <div class="unit three-fifths project-form">
+        <div class="project-form__title">
             <h3>
                 Vous souhaitez être présent sur l’annuaire de la Conso Collaborative ? 
             </h3>
@@ -26,11 +24,13 @@
         </div>
         
         <hr>
-        <form action="/submission/" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input class="foo" type="submit" value="Envoyer" />
-        </form>
+        <div class="project-form__form">
+            <form action="/submission/" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input class="foo" type="submit" value="Envoyer" />
+            </form>
+        </div>
     </div>
     <div class="unit one-fifth"></div>
 </div>

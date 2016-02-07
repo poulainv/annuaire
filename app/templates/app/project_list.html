@@ -39,11 +39,11 @@
 {% block display_options %}
     {% with request.GET.as_list as as_list %}
         <div class="display-options">
-        <a class="picto-list {% if as_list == 'false' %} picto-list--deactivated {% endif %}" 
+        <a class="picto-list {% if not as_list or kas_list == 'false' %} picto-list--deactivated {% endif %}" 
             href="{% url 'projects' %}/{% query_string as_list 'true' 'false' %}">
         </a>
         <a class="picto-card
-            {% if not as_list or as_list == 'true' %} picto-card--deactivated {% endif %}" 
+            {% if as_list == 'true' %} picto-card--deactivated {% endif %}" 
             href="{% url 'projects' %}/{% query_string as_list 'false' 'true' %}">
         </a>
         </div>
@@ -75,20 +75,27 @@
         {% endif %}
 
         {% if is_paginated %}
-            <div class="pagination">
-                <span class="page-links">
-                    {% if page_obj.has_previous %}
-                        <a href="?page={{ page_obj.previous_page_number }}&category={{request.GET.category}}&as_list={{request.GET.as_list}}">Précédente</a> -
-                    {% endif %}
-                    <span class="page-current">
-                        Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}
+        <div class="grid no-stacking-on-mobiles">
+            <div class="unit one-fifth"></div>
+            <div class="unit three-fifths">
+                <div class="pagination">
+                    <span class="page-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}&category={{request.GET.category}}&as_list={{request.GET.as_list}}">Précédente</a> -
+                        {% endif %}
+                        <span class="page-current">
+                            Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}
+                        </span>
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}&category={{request.GET.category}}&as_list={{request.GET.as_list}}"> - Suivante</a>
+                        {% endif %}
                     </span>
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}&category={{request.GET.category}}&as_list={{request.GET.as_list}}"> - Suivante</a>
-                    {% endif %}
-                </span>
+                </div>
             </div>
+            <div class="unit one-fifth"></div>
+        </div>
         {% endif %}
+            
 
 {% endblock content %}
 

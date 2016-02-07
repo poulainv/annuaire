@@ -6,10 +6,10 @@ from django import forms
 
 class SubmissionForm(forms.Form):
     
-    lastname = forms.CharField(label='Nom', max_length=100, required=True)
-    firstname = forms.CharField(label='Prénom', max_length=100)
-    email = forms.EmailField(label='Email', required=True)
-    phone = forms.CharField(label='Téléphone', max_length=100)
-    project_name = forms.CharField(label='Nom du projet', max_length=100, required=True)
-    project = forms.CharField(label='Mon projet en quelques mots', max_length=300, widget=forms.Textarea, required=True)
-    url = forms.URLField(label='Lien vers le projet', required=True)
+    lastname = forms.CharField(max_length=100, required=True,                       widget=forms.TextInput(attrs={'placeholder' : 'NOM', 'id': 'form-lastname'}))
+    firstname = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'PRENOM', 'id': 'form-firstname'}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'placeholder': 'EMAIL', 'id': 'form-email'}))
+    phone = forms.CharField( max_length=100, widget=forms.TextInput(attrs={'placeholder': 'TELEPHONE', 'id': 'form-phone'}))
+    project_name = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'placeholder': 'NOM DU PROJET', 'id': 'form-project-name' }))
+    url = forms.URLField(required=True, widget=forms.TextInput(attrs={'placeholder': 'URL', 'id': 'form-url' }))
+    project = forms.CharField(max_length=300, required=True, widget=forms.Textarea(attrs={'placeholder': 'DITES-NOUS EN PLUS SUR LE PROJET QUE VOUS SOUHAITEZ AJOUTER OU BIEN MODIFIER', 'id': 'form-project'}))

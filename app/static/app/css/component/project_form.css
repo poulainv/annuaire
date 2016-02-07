@@ -1,0 +1,61 @@
+.project-form {
+    margin-top: 3%;
+    padding: 15px 30px 10px 30px !important;
+    min-height: 220px;
+    border: 1px solid #233D6C;
+    background-color: white;
+}
+
+form label {
+    vertical-align: top;
+}
+
+label {
+    display: none;
+}
+
+form input, textarea{
+    border: 1px solid #233D6C;
+    margin-top: 10px;
+    padding: 8px 5px 5px 5px;
+}
+
+.project-form__title {
+    text-align: center;
+}
+
+.project-form__form > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#form-lastname {
+    width: 48%;
+}
+
+#form-firstname {
+    width: 48%;
+}
+
+#form-email {
+    width: 48%;
+}
+
+#form-phone {
+    width: 48%;
+}
+
+#form-project {
+    width: 100%;
+}
+
+#form-url {
+    width: 48%;
+
+}
+
+#form-project-name {
+    width: 48%;
+}
+

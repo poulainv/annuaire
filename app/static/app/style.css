@@ -50,15 +50,6 @@ p {
     text-align: justify;
 }
 
-.display-options > a >* {
-    margin: 5px 9% 0px 0px;
-    height: 16px;
-
-}
-
-.options_content__subtitle {
-    margin: 0px;
-}
 
 /*-------*/
 /*CONTENT*/
@@ -71,7 +62,6 @@ p {
     background-color: #F4F2F7;
     position: relative;
 }
-
 
 .main-content {
     margin-top: 3%;
