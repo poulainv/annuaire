@@ -5,7 +5,7 @@
 {% endblock navbar_main %}
 
 {% block options_content %}
-    {% load static %}
+    {% load static from staticfiles %}
     {% load query_string %}
         {% if not request.GET.search %}
             <div class="options-bar__sub-categories">

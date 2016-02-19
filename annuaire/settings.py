@@ -15,9 +15,8 @@ import os
 import socket
 import dj_database_url
 
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -30,8 +29,9 @@ if socket.gethostname() == 'MacBook-Air-de-Vincent.local':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 'consocollaborative.com', 'annuaire.consocollaborative.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 'consocollaborative.com', 'annuaire.consocollaborative.com']
 
+ADMINS = [('Vincent', 'vincent.poulain2@gmail.com')]
 
 # Application definition
 
@@ -55,6 +55,7 @@ AWS_STORAGE_BUCKET_NAME = 'annuaire-consocollab'
 S3DIRECT_REGION = 'eu-west-1'
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -62,7 +63,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'annuaire.urls'
@@ -104,7 +104,6 @@ if socket.gethostname() != 'MacBook-Air-de-Vincent.local':
     DATABASES['default'] =  dj_database_url.config()
 
 
-
 S3DIRECT_DESTINATIONS = {
     # Allow anybody to upload jpeg's and png's.
     'imgs': ('uploads/imgs', lambda u: True, ['image/jpeg', 'image/jpg', 'image/png'],)
@@ -123,17 +122,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, '../app/staticfiles')
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'staticfiles'
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = ('djangobower.finders.BowerFinder', 'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder')
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 BOWER_COMPONENTS_ROOT = BASE_DIR + '/components/'
 

@@ -12,9 +12,9 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'gridism/gridism.css' %}" />
+    {% load static from staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/font.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'gridism/gridism.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/atom/picto.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/component/options_content.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/component/pagination.css' %}" />
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/atom/project.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/submission.css' %}" />
     
-    {% load static %}
+    {% load static from staticfiles %}
     <script type="text/javascript" src="{% static 'jquery/jquery.js' %}"></script>
     <link rel="icon" href="{% static 'app/img/favicon.png' %}" />
 

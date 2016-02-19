@@ -1,4 +1,4 @@
-{% load static %}
+{% load static from staticfiles %}
 {% with 'habitat biens savoir mobilite alimentation finance services ' as categories %}
     <div class="navbar__categories">
         {% for cat in categories.split %}
