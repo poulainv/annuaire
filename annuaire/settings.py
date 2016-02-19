@@ -57,7 +57,6 @@ S3DIRECT_REGION = 'eu-west-1'
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
