@@ -1,0 +1,13 @@
+.options_content {
+    color : #23396e;
+}
+
+.display-options > a >* {
+    margin: 5px 9% 0px 0px;
+    height: 16px;
+
+}
+
+.options_content__subtitle {
+    margin: 0px;
+}

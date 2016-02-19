@@ -1,0 +1,44 @@
+.project-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3%;
+    padding: 15px 30px 10px 30px !important;
+    min-height: 220px;
+    border: 1px solid #233D6C;
+    background-color: white;
+}
+
+.project-view:hover {
+    border-color: #EE5730;
+}
+
+.project-view__logo {
+    width: 160px;
+}
+
+.project-view__info {
+    flex-grow: 2;
+    width: 200px;
+}
+
+.project-view__logo img {
+    width: 100%;
+}
+
+.project-view__info {
+    margin-left: 20px; 
+    align-self: flex-start;
+}
+
+.project-view__header > * {
+    display: inline-block;
+}
+
+.project-view__footer > * {
+    display: inline-block;
+}
+
+.project-view__share {
+    float: right;
+}
