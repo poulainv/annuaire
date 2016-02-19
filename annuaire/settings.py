@@ -105,7 +105,6 @@ if socket.gethostname() != 'MacBook-Air-de-Vincent.local':
     DATABASES['default'] =  dj_database_url.config()
 
 
-
 S3DIRECT_DESTINATIONS = {
     # Allow anybody to upload jpeg's and png's.
     'imgs': ('uploads/imgs', lambda u: True, ['image/jpeg', 'image/jpg', 'image/png'],)
@@ -134,7 +133,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_FINDERS = ('djangobower.finders.BowerFinder', 'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder')
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 BOWER_COMPONENTS_ROOT = BASE_DIR + '/components/'
 
