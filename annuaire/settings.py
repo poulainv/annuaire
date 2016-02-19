@@ -32,6 +32,7 @@ else:
 
 ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 'consocollaborative.com', 'annuaire.consocollaborative.com']
 
+ADMINS = [('Vincent', 'vincent.poulain2@gmail.com')]
 
 # Application definition
 
