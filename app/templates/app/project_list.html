@@ -39,7 +39,7 @@
 {% block display_options %}
     {% with request.GET.as_list as as_list %}
         <div class="display-options">
-        <a class="picto-list {% if not as_list or kas_list == 'false' %} picto-list--deactivated {% endif %}" 
+        <a class="picto-list {% if not as_list or as_list == 'false' %} picto-list--deactivated {% endif %}" 
             href="{% url 'projects' %}/{% query_string as_list 'true' 'false' %}">
         </a>
         <a class="picto-card
