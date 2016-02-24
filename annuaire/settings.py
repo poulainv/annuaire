@@ -29,6 +29,19 @@ if socket.gethostname() == 'MacBook-Air-de-Vincent.local':
 else:
     DEBUG = False
 
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+    'app.pipelines.save_profile_picture' #save facebook profile image
+)
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 'consocollaborative.com', 'annuaire.consocollaborative.com']
 
 ADMINS = [('Vincent', 'vincent.poulain2@gmail.com')]

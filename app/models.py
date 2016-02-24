@@ -1,11 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+from django.contrib.auth.models import User
 from django.db import models
 from s3direct.fields import S3DirectField
 from django.db.models import Q
 
 from autoslug import AutoSlugField
+
+
+class UserProfile(User):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    picture_url = models.URLField()
 
 
 class CategoryManager(models.Manager):
