@@ -25,7 +25,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'yi0cvdox+5vre4ny&k8up_*7sj$ylnqe-uqcu$b85w&%dk%9e6'
 
 if socket.gethostname() == 'MacBook-Air-de-Vincent.local':
-    DEBUG = False
+    DEBUG = True
 else:
     DEBUG = False
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     's3direct',
     'djangobower',
     'sass_processor'
@@ -65,6 +66,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 ROOT_URLCONF = 'annuaire.urls'
 
 TEMPLATES = [
@@ -77,6 +83,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
                 'django.contrib.messages.context_processors.messages',
             ],
         },

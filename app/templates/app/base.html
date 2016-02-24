@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/font.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'gridism/gridism.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/atom/picto.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/atom/text.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/molecule/facebook_connexion.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/component/options_content.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/component/pagination.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/component/project_form.css' %}" />
@@ -116,6 +118,7 @@ window.twttr = (function(d, s, id) {
     {% block options %}
         <div class="grid no-stacking-on-mobiles">
           <div class="unit one-fifth">
+            {% include "app/facebook_connexion.html" %}
           </div>
 
           <div class="unit three-fifths">

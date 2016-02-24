@@ -8,6 +8,7 @@ from . import views
 
 urlpatterns = [
     url(r'^s3direct/', include('s3direct.urls')),
+    url(r'', include('social.apps.django_app.urls', namespace='social')),
     url(r'^submission/', views.submit_project, name='submission'),
     url(r'^mentions-legales/', views.credits, name='mentions-legales'),
     url(r'^projects/(?P<pk>[0-9]+)$', views.ProjectDetailView.as_view(), name='project'),
