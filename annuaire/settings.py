@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     's3direct',
     'djangobower',
+    'vote',
     'sass_processor'
 )
 

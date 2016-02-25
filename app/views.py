@@ -1,3 +1,6 @@
+from json import dumps
+
+from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render
 from django.core.mail import send_mail
@@ -45,6 +48,12 @@ class ProjectIndexView(ListView):
         if selected_sub_cats:
             context['selected_sub_categories'] = SubCategory.objects.filter(pk__in=selected_sub_cats.split(','))
 
+        user = self.request.user
+        if user.is_authenticated:
+            context['liked_projects'] = Project.votes.all(user)
+        else:
+            context['liked_projects'] = []
+
         return context
 
 
@@ -62,6 +71,23 @@ MANAGERS = ['vincent.poulain2@gmail.com', 'contact@consocollaborative.com ']
 
 def credits(request):
     return render(request, 'app/credits.html')
+
+
+def vote(request):
+    if not request.user.is_authenticated:
+        return HttpResponse('Unauthorized', status=401)
+    user = request.user
+    project_id = request.POST['project_id']
+    project = Project.objects.get(id=project_id)
+
+    if not project.votes.exists(user):
+        project.votes.up(user)
+    else:
+        project.votes.down(user)
+
+    response = {'count': project.votes.count(), 
+                'liked': project.votes.exists(user)}
+    return HttpResponse(dumps(response), status=201, content_type='application/json')
 
 
 def submit_project(request):

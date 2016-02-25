@@ -51,6 +51,7 @@
 {% endblock display_options %}
 
 {% block content %}
+    {% load static from staticfiles %}
         {% if request.GET.as_list == 'true' %}
             {% for project in projects %}
                 {% include "app/overview_list.html" with project=project %}
@@ -95,7 +96,7 @@
             <div class="unit one-fifth"></div>
         </div>
         {% endif %}
-            
+        <script type="text/javascript" src="{% static 'app/js/vote.js' %}"></script>
 
 {% endblock content %}
 

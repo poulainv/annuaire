@@ -33,3 +33,39 @@
     background-position: left center;
 }
 
+.picto__heart-empty {
+    background-image: url(../../../app/img/picto__heart-empty.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.picto__heart-empty:hover {
+    background-image: url(../../../app/img/picto__heart-empty-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.picto__heart-full {
+    background-image: url(../../../app/img/picto__heart-full.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.picto__heart-full:hover {
+    background-image: url(../../../app/img/picto__heart-full-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+

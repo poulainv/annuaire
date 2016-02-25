@@ -52,6 +52,5 @@
 .project-card__footer {
     position: absolute;
     height: 30px;
-    bottom: 0;
-    right: 10px;
+    bottom: 0px;
 }

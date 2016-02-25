@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+from vote.managers import VotableManager
+from s3direct.fields import S3DirectField
+from autoslug import AutoSlugField
 
 from django.contrib.auth.models import User
 from django.db import models
-from s3direct.fields import S3DirectField
 from django.db.models import Q
-
-from autoslug import AutoSlugField
 
 
 class UserProfile(User):
@@ -73,6 +73,7 @@ class Project(models.Model):
     contact_telephone = models.CharField(max_length=20, blank=True)
     contact_mail = models.EmailField(blank=True)
     blog_article_url = models.URLField(blank=True)
+    votes = VotableManager()
 
     def __str__(self):
         return self.title.capitalize()

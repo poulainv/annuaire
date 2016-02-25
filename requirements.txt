@@ -8,4 +8,5 @@ whitenoise==2.0.6
 gunicorn==19.1.1
 psycopg2==2.5.1
 django-autoslug==1.9.3
+django-vote==1.1.2
 python-social-auth==0.2.14

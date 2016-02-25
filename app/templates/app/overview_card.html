@@ -25,13 +25,18 @@
     </div>
     <div class="project-card__slogan">
         <p class="project__slogan"> 
-            {{ project.slogan | truncatechars:120 }} 
+            {{ project.slogan | truncatechars:120 }}
         </p>
     </div>
     <div class="project-card__footer">
-            <div class="project-view__share">
-                <div class="fb-share-button" data-href="{% url 'project' project.pk %}" data-layout="button_count"></div>
-                <a class="twitter-share-button" href="https://twitter.com/intent/tweet"></a>
+        <div class="project__like">
+            <span class="project__counter 
+            {% if project in liked_projects %}
+                picto__heart-full
+            {% else %}
+                picto__heart-empty
+            {% endif %}
+            " data-project="{{project.id}}"> {{ project.votes.count }}</span>
         </div>
     </div>
 </div>
