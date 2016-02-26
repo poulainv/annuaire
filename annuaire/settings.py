@@ -42,7 +42,8 @@ SOCIAL_AUTH_PIPELINE = (
     'app.pipelines.save_profile_picture' #save facebook profile image
 )
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 'consocollaborative.com', 'annuaire.consocollaborative.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 'consocollaborative.com', 'annuaire.consocollaborative.com',
+     'www.guide.consocollaborative.com', 'guide.consocollaborative.com']
 
 ADMINS = [('Vincent', 'vincent.poulain2@gmail.com')]
 
