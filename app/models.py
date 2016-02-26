@@ -87,10 +87,3 @@ class Project(models.Model):
         q_sub_category = Q(sub_categories__name__icontains=query)
 
         return Project.objects.filter(q_title | q_slogan | q_category | q_sub_category | q_description).distinct().all()
-
-
-# @receiver(pre_save, sender=Project)
-# def validate_sub_category(sender, instance, **kwargs):
-#     for sub_cat in instance.sub_categories.all():
-#         if sub_cat.category not in instance.categories.all():
-#             raise ValidationError('"%s" does not belong to any categories of this project' % sub_cat)
