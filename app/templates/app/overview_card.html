@@ -17,7 +17,7 @@
                 {% endfor %}
             </div>
             <div class="project-card__url">
-                <a class="project__url" href="{{ project.url }}"> 
+                <a class="project__url" target="_blank" href="{{ project.url }}"> 
                 {{ project.url | truncatechars:20 }} 
                 </a>
             </div>
@@ -29,14 +29,20 @@
         </p>
     </div>
     <div class="project-card__footer">
-        <div class="project__like">
-            <span class="project__counter 
-            {% if project in liked_projects %}
-                picto__heart-full
-            {% else %}
-                picto__heart-empty
-            {% endif %}
-            " data-project="{{project.id}}"> {{ project.votes.count }}</span>
+        <div class="project-card__like">
+        {% if user.is_authenticated %}
+             <span class="project__counter 
+                {% if project in liked_projects %}
+                    picto__heart-full
+                {% else %}
+                    picto__heart-empty
+                {% endif %}
+                " data-project="{{project.id}}"> {{ project.votes.count }}</span>
+        {% else %}
+            <a href=" {% url 'social:begin' 'facebook' %}">
+                <span class="project__counter  picto__heart-empty"> {{ project.votes.count }}</span>
+        {% endif %}
+            </a>
         </div>
     </div>
 </div>

@@ -49,7 +49,7 @@ class ProjectIndexView(ListView):
             context['selected_sub_categories'] = SubCategory.objects.filter(pk__in=selected_sub_cats.split(','))
 
         user = self.request.user
-        if user.is_authenticated:
+        if user.is_authenticated():
             context['liked_projects'] = Project.votes.all(user)
         else:
             context['liked_projects'] = []

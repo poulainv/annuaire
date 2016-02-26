@@ -42,7 +42,7 @@
     height: 16px;
 }
 
-.picto__heart-empty:hover {
+.picto__heart-empty:hover, .picto__heart-empty-hover {
     background-image: url(../../../app/img/picto__heart-empty-hover.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -60,12 +60,142 @@
     height: 16px;
 }
 
-.picto__heart-full:hover {
+.picto__heart-full:hover, .picto__heart-full-hover {
     background-image: url(../../../app/img/picto__heart-full-hover.png);
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
     width: 16px;
     height: 16px;
+}
+
+.picto__cat-habitat {
+    background-image: url(../../../app/img/picto__habitat.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-habitat:hover, .picto__cat-habitat-hover {
+    background-image: url(../../../app/img/picto__habitat-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-biens {
+    background-image: url(../../../app/img/picto__biens.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-biens:hover, .picto__cat-biens-hover {
+    background-image: url(../../../app/img/picto__biens-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+
+.picto__cat-savoir {
+    background-image: url(../../../app/img/picto__savoir.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-savoir:hover, .picto__cat-savoir-hover {
+    background-image: url(../../../app/img/picto__savoir-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+
+.picto__cat-mobilite {
+    background-image: url(../../../app/img/picto__mobilite.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-mobilite:hover, .picto__cat-mobilite-hover {
+    background-image: url(../../../app/img/picto__mobilite-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-alimentation {
+    background-image: url(../../../app/img/picto__alimentation.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-alimentation:hover, .picto__cat-alimentation-hover {
+    background-image: url(../../../app/img/picto__alimentation-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+
+.picto__cat-finance {
+    background-image: url(../../../app/img/picto__finance.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-finance:hover, .picto__cat-finance-hover{
+    background-image: url(../../../app/img/picto__finance-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+
+.picto__cat-services {
+    background-image: url(../../../app/img/picto__services.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.picto__cat-services:hover, .picto__cat-services-hover {
+    background-image: url(../../../app/img/picto__services-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
 }
 

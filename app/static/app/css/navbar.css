@@ -48,6 +48,9 @@
 /*OPTION*/
 /*------*/
 
+.options-bar {
+    min-height: 35px;
+}
 
 .options-bar__search {
     padding-top: 7px;

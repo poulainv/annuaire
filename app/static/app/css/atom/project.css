@@ -63,9 +63,12 @@
 .project__counter {
     font-size: 0.9em;
     padding-left: 25px;
+    width: inherit;
 }
 
 .project__counter:hover {
     color: #EE5730;
     cursor: pointer;
+    width: inherit;
+
 }

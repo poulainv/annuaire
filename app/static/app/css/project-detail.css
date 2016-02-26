@@ -73,3 +73,16 @@
 .project-detail__twitter-btn {
     margin-left : -23px;
 }
+
+.project-detail__url {
+    display: inline-block;
+}
+
+.project-detail__like {
+    float: right;
+    display: inline-block;
+}
+
+.project-detail__subinfo {
+    margin-top: 10px;
+}

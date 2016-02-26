@@ -42,3 +42,16 @@
 .project-view__share {
     float: right;
 }
+
+.project-list__url {
+    display: inline-block;
+}
+
+.project-list__like {
+    float: right;
+    display: inline-block;
+}
+
+.project-list__subinfo {
+    margin-top: 10px;
+}

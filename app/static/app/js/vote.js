@@ -43,14 +43,16 @@ $(document).ready(function() {
     $('.project__counter').click(function(){
         that = $(this)
         var project = that.data('project');
-        $.ajax({
-            type: "POST",
-            url: '/vote/',
-            data: {"project_id": project},
-            success: function(data, status) { updateCounter(that, data['count'], data['liked']) },
-            error: updateCounter,
-            dataType: 'json'
-        })
+        if (project != undefined) {
+            $.ajax({
+                type: "POST",
+                url: '/vote/',
+                data: {"project_id": project},
+                success: function(data, status) { updateCounter(that, data['count'], data['liked']) },
+                error: updateCounter,
+                dataType: 'json'
+            })
+        }
 });
 
 });
