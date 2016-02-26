@@ -46,8 +46,13 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stormy-citadel-1861.herokuapp.com', 
 
 ADMINS = [('Vincent', 'vincent.poulain2@gmail.com')]
 
-# Application definition
+SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET')
 
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_URL = '/'
+
+# Application definition
 INSTALLED_APPS = (
     'app',
     'django.contrib.admin',
