@@ -32,6 +32,9 @@ class ProjectIndexView(ListView):
         else:
             projects_list = Project.objects.order_by('-featured').all()
 
+        if not self.request.user.is_staff:
+            projects_list = projects_list.filter(draft=False)
+
         return projects_list
 
     def get_context_data(self, **kwargs):
@@ -63,6 +66,23 @@ class ProjectDetailView(DetailView):
     context_object_name = 'project'
 
     query_pk_and_slug = True
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = super(ProjectDetailView, self).get_queryset(*args, **kwargs
+            )
+        if not self.request.user.is_staff:
+            return queryset.filter(draft=False)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectDetailView, self).get_context_data(**kwargs)
+        user = self.request.user
+        if user.is_authenticated():
+            context['liked_projects'] = Project.votes.all(user)
+        else:
+            context['liked_projects'] = []
+        return context
 
 
 DEFAULT_FROM_EMAIL = 'contact@consocollaborative.com'
