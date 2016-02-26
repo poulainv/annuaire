@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     align-items: stretch;
     margin-top: 20px;
+    min-width: 950px;
 }
 
 .project-card {

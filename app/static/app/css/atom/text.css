@@ -1,3 +1,10 @@
 .text--little {
+    color: #BCC4D3;
     font-size: 0.7em;
+    font-family: CooperHewitt-Book;
+}
+
+.text--medium {
+    font-size: 0.9em;
+    font-family: CooperHewitt-Book;
 }

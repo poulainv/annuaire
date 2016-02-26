@@ -12,3 +12,11 @@
 }
 
 
+.facebook-connexion__signup {
+    margin-top: 3px;
+    height: 16px;
+}
+
+.facebook-connexion__signin {
+   margin-top: 0px; 
+}

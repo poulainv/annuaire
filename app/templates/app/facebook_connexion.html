@@ -16,7 +16,12 @@
         {% if request.user.is_authenticated %}
             <a href=" {% url 'logout' %}">SE DÉCONNECTER </a>
         {% else %}
-            <a href=" {% url 'social:begin' 'facebook' %}">SE CONNECTER </a>
+            <div class="facebook-connexion__signup">
+                <a href=" {% url 'social:begin' 'facebook' %}">SE CONNECTER </a>
+            </div>
+            <div class="facebook-connexion__signin">
+                <a class="text--medium" href=" {% url 'social:begin' 'facebook' %}">ou s'inscrire </a>
+            </div>
         {% endif %}
     </div>
 </div>
