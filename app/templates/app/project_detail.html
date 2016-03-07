@@ -70,7 +70,7 @@
                 </div>
                     {% endif %}
                 <div class="project__description">
-                    {{ project.description }}
+                    {{ project.description|linebreaks }}
                 </div>
                 <div class="project-detail__footer">
                     {% if project.blog_article_url %}
