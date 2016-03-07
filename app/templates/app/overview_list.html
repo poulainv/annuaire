@@ -22,7 +22,7 @@
             <div class="project-list__subinfo">
                 <div class="project-list__url">
                     <a class="project__url" target="_blank" href="{{ project.url }}"> 
-                        {{ project.url }} 
+                        {{ project.clean_url }} 
                     </a>
                 </div>
                 <div class="project-list__like">
@@ -37,10 +37,10 @@
                 </div>
             </div>
             <p class="project__slogan"> 
-                {{ project.slogan }} 
+               <a href="{% url 'project' project.slug %}"> {{ project.slogan }} </a>
             </p>
             <p class="project__description"> 
-                {{ project.description | truncatechars:180 }} 
+                <a href="{% url 'project' project.slug %}">{{ project.description | truncatechars:180 }} </a>
             </p>
             <div class="project-view__footer">
                 <div class="project-view__share">

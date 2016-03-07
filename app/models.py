@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+from tldextract import extract
+
 from vote.managers import VotableManager
 from s3direct.fields import S3DirectField
 from autoslug import AutoSlugField
@@ -77,6 +79,9 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title.capitalize()
+
+    def clean_url(self):
+        return '{uri.domain}.{uri.suffix}'.format(uri=extract(self.url))
 
     @classmethod
     def search(cls, query):
