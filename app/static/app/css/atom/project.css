@@ -45,6 +45,7 @@
     font-weight: normal;
     font-size: 14px;
     margin: 5px 3px 3px 0px;
+    color:#233D6C;
 }
 
 .project-view__share > * {
@@ -64,6 +65,7 @@
     font-size: 0.9em;
     padding-left: 25px;
     width: inherit;
+    color: #233D6C;
 }
 
 .project__counter:hover {
