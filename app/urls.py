@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='logout'),
     url(r'^submission/', views.submit_project, name='submission'),
     url(r'^mentions-legales/', views.credits, name='mentions-legales'),
+    url(r'^contact/', views.contact, name='contact'),
     url(r'^vote/', views.vote, name='vote'),
     url(r'^projects/(?P<pk>[0-9]+)$', views.ProjectDetailView.as_view(), name='project'),
     url(r'^projects/(?P<slug>[-\w]+)$', views.ProjectDetailView.as_view(), name='project'),

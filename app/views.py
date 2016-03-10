@@ -93,6 +93,10 @@ def credits(request):
     return render(request, 'app/credits.html')
 
 
+def contact(request):
+    return render(request, 'app/contact.html')
+
+
 def vote(request):
     if not request.user.is_authenticated:
         return HttpResponse('Unauthorized', status=401)

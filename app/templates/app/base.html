@@ -55,12 +55,19 @@ window.twttr = (function(d, s, id) {
  
   return t;
 }(document, "script", "twitter-wjs"));
+
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '935935106494041',
       xfbml      : true,
       version    : 'v2.5'
     });
+
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    });
+  
   };
 
   (function(d, s, id){
