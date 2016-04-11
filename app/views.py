@@ -28,7 +28,7 @@ class ProjectIndexView(ListView):
                 .projects.order_by('-featured').all()
         elif category and sub_cats:
             projects_list = Category.objects.get(name=category)\
-                .projects.order_by('-featured').filter(sub_categories__pk__in=sub_cats.split(','))
+                .projects.order_by('-featured').filter(sub_categories__pk__in=sub_cats.split(',')).distinct()
         else:
             projects_list = Project.objects.order_by('-featured').all()
 
