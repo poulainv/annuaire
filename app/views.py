@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
-from .forms import SubmissionForm
+from .forms import SubmissionForm, ContactForm
 
 from .models import Project, Category, SubCategory
 
@@ -86,15 +86,11 @@ class ProjectDetailView(DetailView):
 
 
 DEFAULT_FROM_EMAIL = 'contact@consocollaborative.com'
-MANAGERS = ['vincent.poulain2@gmail.com', 'contact@consocollaborative.com ']
+MANAGERS = ['vincent.poulain2@gmail.com', 'contact@consocollaborative.com']
 
 
 def credits(request):
     return render(request, 'app/credits.html')
-
-
-def contact(request):
-    return render(request, 'app/contact.html')
 
 
 def vote(request):
@@ -130,3 +126,21 @@ def submit_project(request):
         form = SubmissionForm()
 
     return render(request, 'app/project_submission.html', {'form': form})
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            msg_plain = render_to_string('emails/contact.txt', form.cleaned_data)
+            msg_html = render_to_string('emails/contact.html', form.cleaned_data)
+            send_mail('[Annuaire CC] - Formulaire de contact',
+                      msg_plain,
+                      DEFAULT_FROM_EMAIL,
+                      MANAGERS,
+                      html_message=msg_html)
+        return render(request, 'app/contact.html')
+    else:
+        form = ContactForm()
+
+    return render(request, 'app/contact.html', {'form': form})

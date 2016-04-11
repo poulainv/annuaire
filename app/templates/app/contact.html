@@ -2,7 +2,7 @@
 
 {% block options_content %}
 
-    <h2 class="options_content__subtitle">Contact</h2>
+    <h2 class="options_content__subtitle">Je donne mon avis</h2>
 
 {% endblock options_content %}
 
@@ -12,15 +12,17 @@
     <div class="unit one-fifth"></div>
     <div class="unit three-fifths main-content">
 
-        <h4>Ce blog est un espace de collaboration…</h4>
+        
+        <p> Le guide de la consommation collaborative est un espace d'échange co-construit avec la communauté. N'hésitez pas à nous donner votre avis ! </p>
 
-        <ul>
-            <li>Vous êtes une entreprise ou plus généralement un acteur de la consommation collaborative</li>
-            <li>Vous êtes journaliste et souhaitez en savoir plus sur la consommation collaborative</li>
-            <li>Vous voulez organiser une conférence pour présenter la thématique dans votre organisation</li>
-            <li>Vous souhaitez faire bénéficier votre organisation de notre expertise</li>
-        </ul>
-        <p> Contactez-nous par mail à antonin(at)consocollaborative.com </p>           
+        <div class="project-form__form">
+            <form action="/submission/" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input class="foo" type="submit" value="Envoyer" />
+            </form>
+        </div>
+
     </div>
     <div class="unit one-fifth"></div>
 </div>
