@@ -1,0 +1,16 @@
+Bonjour,
+
+
+ Une demande de contact a été enregistrée sur le site du Guide de la Conso Collaborative. Voic le détail :
+
+
+Contact : 
+
+Prénom : {{ firstname }}
+Nom : {{ lastname }}
+Email : {{ email }}
+
+Message : {{ message }}
+
+
+A bientôt,
