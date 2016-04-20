@@ -122,7 +122,6 @@ p {
     background-size: 60px 60px;
     height: 100px;
     width: 80px;
-    color: white;
     font-size: 0.8em;
 }
 
@@ -131,7 +130,8 @@ p {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: #233D6C;
+    color: #FF5A00;
+
     margin-top: 15px;
     background-position: 10px 25px;
     background-size: 60px 60px;
