@@ -8,7 +8,7 @@ from autoslug import AutoSlugField
 
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models import Q
+from django.db.models import Q, Count
 
 
 class UserProfile(User):
@@ -91,4 +91,4 @@ class Project(models.Model):
         q_category = Q(categories__name__icontains=query)
         q_sub_category = Q(sub_categories__name__icontains=query)
 
-        return Project.objects.filter(q_title | q_slogan | q_category | q_sub_category | q_description).distinct().all()
+        return Project.objects.filter(q_title | q_slogan | q_category | q_sub_category | q_description).annotate(score=Count('votes')).order_by('score').distinct().all()

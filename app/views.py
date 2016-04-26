@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.db.models import Count
 
 from .forms import SubmissionForm, ContactForm
 
@@ -25,12 +26,12 @@ class ProjectIndexView(ListView):
             projects_list = Project.search(query)
         elif category and not sub_cats:
             projects_list = Category.objects.order_by('name').get(name=category)\
-                .projects.order_by('-featured').all()
+                .projects.annotate(score=Count('votes')).order_by('-featured', '-score').all()
         elif category and sub_cats:
             projects_list = Category.objects.get(name=category)\
-                .projects.order_by('-featured').filter(sub_categories__pk__in=sub_cats.split(',')).distinct()
+                .projects.annotate(score=Count('votes')).order_by('-featured', '-score').filter(sub_categories__pk__in=sub_cats.split(',')).distinct()
         else:
-            projects_list = Project.objects.order_by('-featured').all()
+            projects_list = Project.objects.annotate(score=Count('votes')).order_by('-featured', '-score').all()
 
         if not self.request.user.is_staff:
             projects_list = projects_list.filter(draft=False)
