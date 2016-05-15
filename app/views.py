@@ -87,7 +87,11 @@ class ProjectDetailView(DetailView):
 
 
 DEFAULT_FROM_EMAIL = 'contact@consocollaborative.com'
-MANAGERS = ['vincent.poulain2@gmail.com', 'contact@consocollaborative.com']
+
+MANAGERS = ['vincent.poulain2@gmail.com',
+            'contact@consocollaborative.com',
+            'edwin@consocollaborative.com',
+            'jeanjacques@consocollaborative.com']
 
 
 def credits(request):
@@ -106,7 +110,7 @@ def vote(request):
     else:
         project.votes.down(user)
 
-    response = {'count': project.votes.count(), 
+    response = {'count': project.votes.count(),
                 'liked': project.votes.exists(user)}
     return HttpResponse(dumps(response), status=201, content_type='application/json')
 
